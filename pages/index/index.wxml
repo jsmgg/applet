@@ -1,0 +1,43 @@
+<!--index.wxml-->
+<import src="../../tpl/image.wxml"/>
+<include src="../../tpl/netError/netError.wxml" wx:if="{{statusCode==-500&&status==-1}}"/>
+<view class="container" bindtap="js_clear_dialog" wx:if="{{statusCode!=-500||status!=-1}}">
+  <template wx:if="{{status==1||showCard}}" is="image" data="{{style:client+' bg',src:cdnHost+'appletBg.gif',mode:'aspectFill'}}"></template>
+  <view class="cardBox" wx:if="{{status==1||showCard}}">
+    <template is="image" data="{{style:'topopc',src:'/img/topopc.png'}}"></template>
+    <include src="card/card.wxml" wx:if="{{showCard}}"/>
+    <view class="noapplyBox" wx:if="{{status==1}}">
+        <template wx:if="{{true}}" is="image" data="{{style:'noapplyBg',src:'/img/noapply.png'}}"></template>
+      <view class="textBox">你好像还没报名</view>
+      <text class="text" bindtap="js_applyTips">马上去</text>
+    </view>
+  </view>
+
+
+  <block wx:if="{{(status==3||status==2)&&!showCard}}">
+    <include src="header/header.wxml"/>
+    <view class="bottomBody">
+      <include src="recordNum/recordNum.wxml"/>
+      <include src="nav/nav.wxml" />
+      <view class="dkbtnbg" wx:if="{{status==3}}" bindtap="js_showdklist">
+        <text class="indexBtntxt">{{servicesEnd==1?'查看往期目标':'打卡'}}</text>
+        <template is="image" data="{{style:'dkbtnbg-img',src:'/img/dkbtnbg.png'}}"></template>
+      </view>
+      
+    </view>
+    <include wx:if="{{showCardList}}" src="cardList/cardList.wxml"/>
+
+  </block>
+
+
+  
+  
+
+  <view wx:if="{{showApplyTips}}" class="applyTips" bindtap="js_applyTips">
+    <template is="image" data="{{style:'applyTipsBg',src:'/img/sharetips.png'}}"></template>
+  </view>
+
+  <include src="phoneChange/changeView.wxml" wx:if="{{phoneChangeView}}"/>
+  <include src="phoneChange/bindBack.wxml" wx:if="{{forceMigrate==1&& status==1}}"/>
+  <view class="version">{{version}}</view>
+</view>

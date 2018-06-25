@@ -1,0 +1,31 @@
+<!--play.wxml-->
+<import src="../../../../tpl/image.wxml" />
+
+<view class="container sportPage">
+  <view class="imgBox" bindtap="js_changeImg">
+    <template wx:if="{{!!imgPath}}" is="image" data="{{src:imgPath,style:'img',mode: 'aspectFill'}}"></template>
+    <view class="btnbox">
+      <template is="image" data="{{src:imgPath?'/img/add-selected.png':'/img/add-default.png',style:'addBtn'}}"></template>
+    </view>
+  </view>
+  <view class="titleView">
+    <view class="val">运动内容</view>
+    <view class="btn {{selectedList.length > 0 ? 'bg' : ''}}" bindtap="js_delView">{{delView?'完成':'编辑'}}</view>
+  </view>
+
+  <include src="selectedList/selectedList.wxml" wx:if="{{selectedList.length>0}}"/>
+
+  <view class="search-btn-wrapper">
+    <view class="search-btn" catchtap="js_focus">添 加</view>
+  </view>
+</view>
+
+<include src="list/list.wxml"/>
+
+<include src="units/units.wxml"/>
+
+<view class="nextBox" wx:if="{{!searchView}}">
+  <view class="nextBg" style="{{cdnHost?'background-image: url('+cdnHost+'generate-btn-bg.png)':''}}">
+    <template is="image" data="{{src: '/img/next.png', style: 'next', bindtap: 'next'}}"></template>
+  </view>
+</view>

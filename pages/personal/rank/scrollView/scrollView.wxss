@@ -1,0 +1,124 @@
+.scrollView{
+  width: 100%;
+  flex: 1;
+}
+.scrollItemTmp{
+  width: 100%;
+  height: 20rpx;
+}
+.scrollItem{
+  box-sizing: border-box;
+  width: 100%;
+  padding:0 40rpx;
+  height: 149rpx;
+  position: relative;
+}
+
+.staticView{
+  width: 100%;
+  height: 100%;
+  padding-left: 57rpx;
+  padding-right: 17rpx;
+  display: flex;
+  box-sizing: border-box;
+  align-items: center;
+  border-bottom:1rpx solid #f2f2f2;
+}
+
+.scrollItem .num{
+  position: absolute;
+  z-index: 2;
+  width: 97rpx;
+  height: 100%;
+  left: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48rpx;
+  color:rgba(0,0,0,0.8);
+}
+
+.scrollItem .img{
+  display: block;
+  width: 50rpx;
+  height: 59rpx;
+}
+
+.userImg{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 100%;
+  overflow: hidden;
+}
+.userImg .avatar{
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.staticView .userName{
+  flex: 1;
+  margin-left: 20rpx;
+  font-size: 30rpx;
+  color:rgba(0,0,0,0.8);
+}
+.staticView .count{
+  flex: 1;
+  text-align: right;
+  font-size: 30rpx;
+  color:rgba(0,0,0,0.44);
+}
+
+.scrollItem .myView{
+  display: flex;
+  height: 100%;
+  position: absolute;
+  left: 20rpx;
+  right: 20rpx;
+  top: 0;
+  bottom: 0;
+  padding-right: 30rpx;
+  align-items: center;
+  justify-content: center;
+  background:#50c5af;
+  border-radius: 8rpx;
+  padding-left: 20rpx;
+}
+.scrollItem .myView .mynum{
+  height: 100%;
+  left: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+  font-size: 48rpx;
+  color:rgba(0,0,0,0.8);
+}
+.myView .userName{
+  flex: 1;
+  margin-left: 20rpx;
+  font-size: 30rpx;
+  color:rgba(0,0,0,0.8);
+}
+.scrollItem .myView .userImg{
+  margin-left: 30rpx;
+}
+.myView .count{
+  flex: 1;
+  text-align: right;
+  font-size: 30rpx;
+  color:rgba(0,0,0,0.44);
+}
+
+.scrollItem .myView .myimg{
+  display: block;
+  width: 50rpx;
+  height: 59rpx;
+}
+
+
+.scrollBottom{
+  width: 100%;
+  height: 100rpx;
+}

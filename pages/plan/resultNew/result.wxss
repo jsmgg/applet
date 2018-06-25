@@ -1,0 +1,315 @@
+@font-face {
+    font-family: Number;
+    src: url('https://mall.rjfittime.com/static/eshop/scss/logic/activity/jzy/num.otf');
+}
+
+.wrapper{
+    padding-bottom: 80rpx;
+}
+.wrapper .tip{
+    width:690rpx;
+    height:690rpx;
+    margin-top:33rpx;
+    margin-left:auto;
+    margin-right:auto;
+    border:1rpx solid #e5e5e5;
+    position:relative;
+    text-align:center;
+    color:#fff;
+}
+.wrapper .tip image {
+    width: inherit;
+    height: inherit;
+}
+.wrapper .tip .tip-info1{
+  margin-top:279rpx;
+  font-size:60rpx;
+}
+.wrapper .tip .tip-info2{
+  font-size:48rpx;
+  margin-top:25rpx;
+}
+.wrapper .tip .tip-bottom {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+.wrapper .tip .tip-bottom .checkInCount-wrap{
+  height: 60rpx;
+  line-height: 60rpx;
+  margin-right: 22rpx;
+  margin-bottom: 18rpx;
+  font-size: 30rpx;
+
+  text-align: right;
+}
+.wrapper .tip .tip-bottom .checkInCount-wrap .checkInCount {
+  font-family: "Futura-CondensedExtraBold", sans-serif;
+  font-size: 72rpx;
+}
+.wrapper .tip .tip-bottom .tip-days-wrap{
+  position: relative;
+  height: 70rpx;
+}
+.wrapper .tip .tip-bottom .tip-days-wrap image {
+  width: 100%;
+  height: 70rpx;
+}
+.wrapper .tip .tip-bottom .tip-days-wrap .tip-days {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  height: 70rpx;
+  line-height: 70rpx;
+  margin-left: 90rpx;
+  font-size:30rpx;
+  font-weight: bold;
+  text-align: left;
+  color: #fff;
+}
+.wrapper .tip .tip-logo-mask {
+    position:absolute;
+    top: 10rpx;
+    right: 10rpx;
+    width:109rpx;
+    height:33rpx;
+    background: rgba(0, 0, 0, .1);
+}
+.wrapper .tip .tip-logo-wrap{
+    position:absolute;
+    top: 0;
+    right: 0;
+    width:109rpx;
+    height:36rpx;
+}
+.wrapper .tip .tip-logo-wrap image {
+    position:absolute;
+    top: 0;
+    right: 0;
+    width: inherit;
+    height: inherit;
+}
+.info{
+    margin-top:60rpx;
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+    margin-top: 55rpx;
+    padding-bottom: 100rpx;
+}
+.title-wrapper {
+    display: block;
+    line-height: 40rpx;
+    margin-top: 62rpx;
+    padding-left: 150rpx;
+}
+.title-wrapper .title{
+   font-size: 36rpx;
+   font-weight: bold;
+   vertical-align: middle;
+   margin-right: 20rpx;
+}
+.title-wrapper .totalCalorie {
+   font-size: 36rpx;
+   font-weight: bold;
+   margin: 0 40rpx 0 26rpx;
+   vertical-align: middle;
+}
+.title-wrapper .img {
+  position: relative;
+  width: 120rpx;
+  height: 40rpx;
+  vertical-align: middle;
+}
+.title-wrapper .img .from {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24rpx;
+    color: white;
+    text-align: center;
+    text-indent: 10rpx;
+}
+.info .info-item{
+    width:196rpx;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:flex-start;
+}
+.info .gap-wrap {
+    flex: 0 0 1px;
+    width: 1px;
+    height: 50rpx;
+    background: #cccccc;
+    align-self: center;
+}
+.info .info-item .info-item-num{
+    font-size:60rpx;
+    font-family: "Number";
+    line-height:60rpx;
+    color:#000;
+    position:relative;
+}
+.info .info-item .info-item-text{
+    font-size:20rpx;
+    margin-top:23rpx;
+    color:#999;
+}
+.info .info-item .info-item-line{
+    width:1rpx;
+    height:50rpx;
+    position:absolute;
+    right:0;
+    top:24rpx;
+    background:#d6d6d6;
+}
+.btns{
+    position:fixed;
+    bottom:0;
+    left:0;
+    width:100%;
+    box-sizing:border-box;
+    padding-top: 50rpx;
+    padding-bottom: 60rpx;
+    padding-left:40rpx;
+    padding-right:40rpx;
+    display:flex;
+    justify-content:space-between;
+}
+.btns .btn{
+    height:90rpx;
+    width:320rpx;
+    border-radius:45rpx;
+    box-sizing:border-box;
+    font-size:32rpx;
+    text-align:center;
+    line-height:90rpx;
+}
+.btns .btn-only{
+    height:90rpx;
+    width:320rpx;
+    margin: 0 auto;
+    border-radius:45rpx;
+    box-sizing:border-box;
+    font-size:32rpx;
+    text-align:center;
+    line-height:90rpx;
+}
+.btns .btns-send{
+    color:#fff;
+    background:#2cb190;
+}
+.btns .btns-send.disabled{
+    background:#e6e6e6;
+}
+.btns .btns-again{
+    color:#2cb190;
+    background: white;
+    border:1rpx solid #2cb190;
+}
+.mask{
+    width:100%;
+    height:100%;
+    position:fixed;
+    left:0;
+    top:0;
+    background:rgba(0,0,0,0.9);
+    z-index: 1;
+}
+.mask .ios-img{
+    width:122rpx;
+    height:178rpx;
+    margin:360rpx auto 40rpx;
+    display:block;
+}
+.mask .tip-txt{
+    color:#fff;
+    font-size:32rpx;
+    text-align:center;
+}
+.mask .btn{
+    color:#2cb190;
+    border:2rpx solid #2cb190;
+    border-radius:50rpx;
+    width:300rpx;
+    line-height:90rpx;
+    text-align:center;
+    font-size:36rpx;
+    margin:130rpx auto 0;
+}
+.mask .andBox{
+  position: absolute;
+  top:0;
+  width:100%;
+}
+
+.mask .android-img{
+  width: 594rpx;
+  height: 478rpx;
+  margin-left: 126rpx;
+  display: block;
+}
+.btns .btn-disabled{
+  background:#e6e6e6;
+}
+
+.edit-layer {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    background: rgba(0, 0, 0, .8);
+}
+.edit-wrapper {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-top-left-radius: 10rpx;
+    border-top-right-radius: 10rpx;
+    background: white;
+    padding: 0 80rpx;
+    z-index: 3;
+}
+.edit-wrapper .edit-header {
+    margin-bottom: 60rpx;
+    padding-top: 80rpx;
+    line-height: 42rpx;
+    font-size: 42rpx;
+    font-weight: bold;
+    text-align: center;
+}
+.edit-content {
+    margin-bottom: 100rpx;
+}
+.edit-content .level-list {
+    display: flex;
+    margin-bottom: 40rpx;
+}
+.edit-content .level-list .level-item {
+    flex: 1;
+    width: 95rpx;
+    height: 95rpx;
+}
+.edit-content .level-desc {
+    height: 30rpx;
+    text-align: center;
+    font-size: 30rpx;
+    line-height: 30rpx;
+    font-weight: bold;
+}
+.edit-wrapper .edit-footer {
+}
+.edit-wrapper .edit-footer .btn {
+    display: block;
+    width: 434rpx;
+    height: 128rpx;
+    margin: 0 auto;
+}

@@ -1,0 +1,21 @@
+/* pages/recordNew/food/reference/reference.wxss */
+.container{
+  width: 100%;
+  color: rgba(0, 0, 0, .85);
+}
+.img0{
+  display: block;
+  width: 100%;
+  height: 655rpx;
+}
+.img1{
+  display: block;
+  width: 100%;
+  height: 1477rpx;
+  
+}
+.img2{
+  display: block;
+  width: 100%;
+  height: 1606rpx;
+}

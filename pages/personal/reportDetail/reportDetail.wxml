@@ -1,0 +1,8 @@
+<!--pages/personal/reportDetail/reportDetail.wxml-->
+<import src="../../../tpl/image.wxml"/>
+<view class="container">
+<view class="imgBox">
+<template wx:if="{{true}}" is="image" data="{{style:'nowap',src:'/img/nowap.png',mode:'aspectFill',bindtap:'js_goback'}}"></template>
+</view>
+<web-view src="{{src}}"/>
+</view>

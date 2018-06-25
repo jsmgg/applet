@@ -1,0 +1,11 @@
+<import src="../../../tpl/image.wxml" />
+<view class="bindBackView">
+  <view bindtap='js_closeBackView' class="bindBackView-close">
+    <template is="image" data="{{style:'bindBackView-close-img',src:'/img/delete.png'}}"></template>
+  </view>
+  <view class="bindBackView-content">
+    <view class="bindBackView-desc">您已成功绑定手机号{{updateMobile}}</view>
+    <view class="bindBackView-desc">没有搜索到报名记录，您可能使用了其它账号报名。需要人为确定您的报名记录～</view>
+    <view class="bindBackView-tips">请联系您的私人教练!</view>
+  </view>
+</view>

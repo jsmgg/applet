@@ -1,0 +1,31 @@
+<view class="ruleDialog" bindtap="js_hideRule" id="js_hideRule">
+
+  <view class="ruleBox">
+    <view class="title">活动规则</view>
+    <view class="contentBox">
+      <view class="title2">海选</view>
+      <view class="txt">1.好友榜（群内排名）排行前5名的学员可以入围明星榜。</view>
+      <view class="txt">2.明星榜将在入营后第四周周一公布，第四周周五24：00时锁定有资格参选投票的学员（有资格的学员下方会出现上传资料按钮）。</view>
+
+      <view class="title2">晋级</view>
+      <view class="txt">1.有资格上传资料的学员需在周六完成上传资料（如在周六24:00前未上传资料，视为主动放弃资格）。</view>
+      <view class="txt">资料要求：</view>
+      <view class="txt">（1）最少200字的简短介绍（简单描述一下为什么来参加减脂营，以及减脂营带给自己最大的改变）。</view>
+      <view class="txt">（2）上传两张减脂营前后的生活照，需要露脸的哦。</view>
+
+      <view class="title2">总决赛</view>
+      <view class="txt">第四周周日00：00开始投票，截止至当日20:00投票截止前，学员可h5分享给身边的朋友来为自己投票。</view>
+      <view class="txt">如票数相等排名相同，显示排序参照个人积分高低。</view>
+      
+      
+      
+
+      <view class="title2">奖项设置</view>
+
+      <view class="txt">获得明星学员后可以获得998元的现金，并且有机会成为我公众号学员故事的主人公，可以和大家分享自己的励志故事</view>
+
+      <view class="desc">本活动最终解释权归FitTime口袋减脂营所有</view>
+    </view>
+
+  </view>
+</view>

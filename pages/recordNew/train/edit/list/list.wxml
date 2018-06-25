@@ -1,0 +1,20 @@
+<view class="search-layer" style="transform: translateY({{searchView ? 0 : searchVertical}}px)" hidden="{{!renderSearch}}">
+    <view class="addBox" id="js_searchBox">
+        <input
+            class="input"
+            maxlength="100"
+            value="{{clearValue}}"
+            placeholder-class="input_placeholder"
+            placeholder="请输入运动项目"
+            bindinput="js_search" 
+            confirm-type="done" 
+            focus="{{focusFlag}}" />
+        <view class="cancel" wx:if="{{searchView}}" bindtap='js_cancel'>取消</view>
+    </view>
+    <scroll-view scroll-y style="height: {{listHeight}}px;" class="train-list" scroll-top="{{scrollTop}}" bindscrolltolower="js_loadMore">
+      <view class="scrollItem define lineDot" wx:if="{{showTag==1&&keyword!=''}}" bindtap="js_diyTrain">将“{{keyword}}”添加为自定义运动</view>
+      <view class="scrollItem lineDot" wx:for="{{searchList}}" wx:for-item="item" wx:key="id" data-index="{{item.id}}" bindtap="js_select">
+        {{item.name}}
+      </view>
+    </scroll-view>
+</view>

@@ -1,0 +1,78 @@
+@import "countryList/countryList.wxss";
+@import "confirm/confirm.wxss";
+.container{
+  padding:0 30rpx;
+}
+.title{
+  font-size:48rpx;
+  font-weight:bold;
+  padding-bottom:50rpx;
+}
+.item{
+  height: 124rpx;
+  line-height: 124rpx;
+  border-bottom:1rpx solid #f2f2f2;
+  width:100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.item input{
+  width:100%;
+  height: 100%;
+  padding-left:5rpx;
+}
+.item input.code{
+  flex: 1;
+}
+.item .getcode{
+  font-size:24rpx;
+  color:#1f80ee;
+  width:164rpx;
+  height: 54rpx;
+  text-align: center;
+  line-height: 54rpx;
+  border:1rpx solid #1f80ee;
+  border-radius:25rpx;
+}
+
+.country{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.country .text{
+  flex: 1;
+  display: block
+}
+.country .num{
+  display: block;
+  padding-right:30rpx;
+  position: relative
+}
+.country .num image{
+  position: absolute;
+  right:0;
+  top:50%;
+  margin-top:-10rpx;
+  width:15rpx;
+  height: 21rpx;
+  display: block;
+}
+
+.blue-btn{
+  margin-top:68rpx;
+  width:100%;
+  background-color: #1f80ee;
+  border-radius:45rpx;
+  font-size:32rpx;
+  color:#fff;
+  text-align: center;
+  height: 90rpx;
+  line-height: 90rpx;
+  letter-spacing:24rpx;
+}
+.btnHover{
+  background-color: rgba(31,128,238,0.8);
+}

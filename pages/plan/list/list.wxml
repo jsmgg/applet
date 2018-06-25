@@ -1,0 +1,14 @@
+<!--list.wxml-->
+<import src="../../../tpl/image.wxml" />
+<include src="../../../tpl/netError/netError.wxml" wx:if="{{networkType=='none'}}"/>
+
+<view class="container planList" wx:if="{{networkType!='none'}}">
+
+        <view class="planList-item{{index%2==1?' planList-item-ml':''}}" wx:for="{{list}}" wx:for-item="item" wx:key="index" data-index="{{index}}" bindtap="js_goplay" id="planList-{{item.id}}">
+          <image src="{{item.imageUrl}}" class="planList-item-img"></image>
+          <view class="planList-item-opc"></view>
+          <text class="planList-item-title lineDot">{{item.trainName}}</text>
+        </view>
+        <view class="planList-item planList-item-ml" wx:if="{{addLast}}"></view>
+
+</view>

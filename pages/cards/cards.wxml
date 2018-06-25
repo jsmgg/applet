@@ -1,0 +1,33 @@
+<import src="../../tpl/image.wxml"/>
+
+<view class="container">
+  <view class="cardBox" wx:if="{{loadend&&netError==0}}">
+    <template is="image" data="{{style:'cardtopopc',src:'/img/cardtopopc.png'}}"></template>
+    <block wx:for="{{list}}" wx:for-item="item" wx:key="index">
+      <view class="card-item" bindtap="js_showdk_view" data-type="{{item.type}}" id="cardPage-{{item.type}}">
+        <view class="card-imgbox">
+          <template is="image" data="{{style:item.type,src:'/img/'+item.type+'.png'}}"></template>
+        </view>
+        <view class="card-title">
+          <view class="card-title-val">{{item.title}}</view>
+          <view class="card-title-tmp" wx:if="{{item.type=='bodydata'}}">测量完成得15积分</view>
+          <view class="card-title-tmp" wx:elif="{{item.type=='werun'}}">
+            {{item.status==1?'授权微信运动步数，兑换积分':('微信运动'+item.runNumber+'步，得'+item.score+'积分')}}
+          </view>
+          <view class="card-title-tmp" wx:elif="{{item.type=='training'}}">打卡得10积分</view>
+          <view class="card-title-tmp" wx:else>打卡得5积分</view>
+
+        </view>
+
+        <view class="card-dkbtn {{aniStyle}}">
+          <text wx:if="{{item.type=='bodydata'}}" bindtap="js_dk" class="text{{item.status==3?' dis':''}}" data-type="{{item.type}}">{{item.status==1?'开始测量':(item.status==2?'立即领取':'查看记录')}}</text>
+          <text wx:elif="{{item.type=='werun'}}" class="text{{item.status==3?' dis':(item.status==1?' alow':'')}}" data-type="{{item.type}}">{{item.status==1?'立即授权':(item.status==2?'立即领取':'已领取')}}</text>
+          <text class="text{{item.status==3?' dis':''}}" bindtap="js_dk" data-type="{{item.type}}" wx:else>{{item.status==1?'快速打卡':(item.status==2?'立即领取':'查看记录')}}</text>
+          <text class="ani {{item.type}}">+{{typeScore}}</text>
+        </view>
+        
+      </view>
+    </block>
+  </view>
+  <template is="image" data="{{src:'/img/netError.png',style:'netError',bindtap:'js_reload'}}" wx:if="{{loadend==1&&netError==1}}"></template>
+</view>

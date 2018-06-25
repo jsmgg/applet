@@ -1,0 +1,68 @@
+.traingPage{
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.traingPage-bg{
+  position: absolute;
+  z-index: 0;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+.traingPage-opc{
+  z-index: 10;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255,255,255,0.95);
+}
+.traingPage-content{
+  position: relative;
+  z-index: 20;
+}
+.traingPage-title{
+  width: 100%;
+  font-size: 40rpx;
+  color:rgba(0,0,0,0.7);
+  text-align: center;
+}
+.traingPage-time{
+  font-size: 80rpx;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 60rpx;
+  width: 100%;
+}
+.traingPage-num{
+  padding:0 20rpx;
+}
+.traingPage-btns{
+  margin-top: 120rpx;
+  height: 120rpx;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.traingPage-prev{
+  display: block;
+  width: 120rpx;
+  height: 120rpx;
+}
+.traingPage-next{
+  margin-left: 60rpx;
+  display: block;
+  width: 120rpx;
+  height: 120rpx;
+}

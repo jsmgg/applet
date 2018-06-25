@@ -1,0 +1,15 @@
+<import src="../../../../tpl/image.wxml" />
+<view class="traingPage">
+  <image src="{{cdnHost}}Fj4nka0hu1FLDI0fTHLiXcW4roVg" class="traingPage-bg"></image>
+  <view class="traingPage-opc"></view>
+  <view class="traingPage-content">
+    <view class="traingPage-title">有氧</view>
+    <view class="traingPage-time">跑步<text class="traingPage-num">{{trainingTime}}</text>分钟</view>
+    <view class="traingPage-btns">
+      <template is="image" data="{{src:'/img/traingPagePrev.png',style:'traingPage-prev',bindtap:'js_prev'}}"></template>
+      
+      <template is="image" data="{{src:'/img/traingPageNext.png',style:'traingPage-next',bindtap:'js_traing_over'}}"></template>
+    </view>
+
+  </view>
+</view>

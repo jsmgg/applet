@@ -1,0 +1,25 @@
+
+<import src="../../../tpl/image.wxml"/>
+<view class="navs">
+  <view class="navs-list">
+    <view class="item ml0" hover-class="hover" catchtap="js_cards" id="tab-cards">
+      <text class="tit">日常任务</text>
+      <template is="image" data="{{style:'navCards',src:'/img/navCards.png'}}"></template>
+      <template is="image" wx:if="{{showCardTips}}" data="{{style:'navCardsTips',src:'/img/navCardsTips.png'}}"></template>
+    </view>
+    <view class="item ml18" hover-class="hover" bindtap="js_target_index" id="tab-target">
+      <text class="tit">目标与记录</text>
+      <template is="image" data="{{style:'navTarget',src:'/img/navTarget.png'}}"></template>
+    </view>
+  </view>
+  <view class="navs-list">
+    <view class="item ml0" hover-class="hover" bindtap="js_sport" id="tab-plan">
+      <text class="tit">运动计划</text>
+      <template is="image" data="{{style:'navSport',src:'/img/navSport.png'}}"></template>
+    </view>
+    <view class="item ml18" hover-class="hover" bindtap="js_diet" id="tab-diet">
+      <text class="tit">饮食方案</text>
+      <template is="image" data="{{style:'navDiet',src:'/img/navDiet.png'}}"></template>
+    </view>
+  </view>
+</view>

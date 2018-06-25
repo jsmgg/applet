@@ -1,0 +1,20 @@
+<import src="../../../tpl/image.wxml" />
+<view class="changeView">
+  <view bindtap='js_applyTips' class="changeView-close">
+    <template is="image" data="{{style:'changeView-close-img',src:'/img/delete.png'}}"></template>
+  </view>
+  
+  <view class="changeView-content">
+    <view class="changeView-h2">无报名记录</view>
+    <view class="changeView-desc">请前往[FitTime口袋减脂营]官方微信公众号报名。</view>
+    <view class="changeView-inutTips">如已报名请核对账号信息：</view>
+    <view class="changeView-inputBox">
+      <view class="changeView-txt">绑定手机号</view>
+      <view class="changeView-val">{{mobile}}</view>
+    </view>
+    <view class="changeView-tips">绑定的号码是我个人手机号</view>
+    <view class="changeView-btn" bindtap="js_applyTips">不切换，去联系教练</view>
+    <view class="changeView-tips">号码不再使用或更新另一个手机号</view>
+    <view class="changeView-btn-n" bindtap="js_changeMobile">切换手机号</view>
+  </view>
+</view>

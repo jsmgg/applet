@@ -1,0 +1,11 @@
+<import src="../../../../../tpl/image.wxml" />  
+<view class="selectedList">
+  <view class="item" wx:for="{{selectedList}}" wx:for-item="item" wx:key="index" data-index="{{item.id}}" bindtap="js_editView">
+    <template wx:if="{{delView}}" is="image" data="{{src:'/img/del.png',style:'del',bindtap:'js_delTrain',id:index+''}}"></template>
+    <view class="val lineDot">{{item.name}}</view>
+    <view class="time">{{item.minutes}}分钟</view>
+    <view class="desc" wx:if="{{!item.isDiy}}">消耗{{item.kcal}}千卡</view>
+    <view class="desc" wx:if="{{item.isDiy}}">消耗未知</view>
+    <template wx:if="{{!delView}}" is="image" data="{{src:'/img/arrow-right.png',style:'edit'}}"></template>
+  </view>
+</view>

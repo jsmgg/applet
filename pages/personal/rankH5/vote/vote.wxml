@@ -1,0 +1,7 @@
+<import src="../../../../tpl/image.wxml"/>
+<view class="container">
+<view class="imgBox">
+<template is="image" data="{{style:'nowap',src:'/img/star_nowap.png',mode:'aspectFill',bindtap:'js_goback'}}"></template>
+</view>
+<web-view src="{{src}}"/>
+</view>

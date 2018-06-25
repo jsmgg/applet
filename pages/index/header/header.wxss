@@ -1,0 +1,85 @@
+.header-mod{
+  width: 750rpx;
+  overflow-x: hidden;
+}
+.header-bg{
+  width: 100%;
+  background-color:#1c927c;
+  height: 215rpx;
+  position: relative;
+  z-index: 2;
+}
+
+.header-user{
+  height: 96rpx;
+  padding:0 40rpx;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+.header-logo-box{
+  width: 96rpx;
+  height: 96rpx;
+  position: relative;
+}
+.header-pic{
+  width: 100%;
+  height: 100%;
+  border:4rpx solid #8fcebf;
+  border-radius: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.header-logo{
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.header-unRead{
+  position: absolute;
+  right: 0;
+  top: 0rpx;
+  width: 24rpx;
+  height: 24rpx;
+}
+
+.header-uname{
+  flex: 1;
+  padding-left: 20rpx;
+  font-size: 36rpx;
+  color:#fff;
+}
+
+.header-term{
+  height: 50rpx;
+  line-height: 50rpx;
+  padding:0 16rpx;
+  background:#289f82;
+  font-size: 26rpx;
+  color:#fff;
+  border-radius: 25rpx;
+}
+
+.header-bottom-bg{
+  width: 100%;
+  height: 97rpx;
+  margin-top: -48rpx;
+
+}
+.header-radiusbg{
+  display: block;
+  width: 100%;
+  height: 97rpx;
+}
+
+
+
+
+
+

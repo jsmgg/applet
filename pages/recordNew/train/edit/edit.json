@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "运动打卡",
+  "enablePullDownRefresh": false,
+  "navigationBarTextStyle": "black",
+  "navigationBarBackgroundColor":"#fff",
+  "usingComponents":{
+    "component-keyboard":"/pages/components/keyboard/index"
+  }
+}

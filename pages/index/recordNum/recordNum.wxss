@@ -1,0 +1,87 @@
+@font-face {
+    font-family: Percent;
+    src: url('https://o4wbikkhf.qnssl.com/DINE12.ttf');
+}
+
+.recordNum{
+  position: relative;
+  margin:0 40rpx;
+  z-index: 4;
+  background: #fff;
+  border-radius: 20rpx;
+}
+
+.recordNum-canvas{
+  height: 380rpx;
+  width: 614rpx;
+  margin:0 auto;
+  padding-top: 30rpx;
+  border-bottom: 1rpx solid #e5e5e5;
+}
+
+.recordNum-canvas-wrap {
+    width: 360rpx;
+    height: 360rpx;
+    margin: 0 auto;
+}
+.recordNum-canvas-wrap .target-progress-circle {
+    width: 100%;
+    height: 100%;
+}
+.recordNum-canvas-wrap .target-progress-circle .target-reduce {
+    width: 100%;
+    margin-top: 62rpx;
+    margin-bottom: 18rpx;
+    line-height: 120rpx;
+    font-size: 120rpx;
+    text-align: center;
+    color: #333;
+    font-family: "Percent", Regular, PingFangSC, "Helvetica Neue", Helvetica, sans-serif;
+}
+.recordNum-canvas-wrap .target-progress-circle .target-reduce-info {
+    width: 100%;
+    line-height: 20rpx;
+    margin-bottom: 35rpx;
+    font-size: 20rpx;
+    color: #8c8c8c;
+    text-align: center;
+}
+.recordNum-canvas-wrap .target-progress-circle .target-diff {
+    width: 100%;
+    line-height: 26rpx;
+    font-size: 24rpx;
+    color: #333;
+    text-align: center;
+}
+.recordNum-canvas-wrap .target-progress-circle .target-diff .target-diff-value {
+    font-size: 30rpx;
+    font-family: "Percent", Regular, PingFangSC, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.recordNum-list{
+  display: flex;
+  padding:25rpx 0;
+}
+.recordNum-item{
+  flex: 1;
+  height: 80rpx;
+  display: flex;
+  flex-direction:column;
+  border-left: 1rpx solid #e5e5e5;
+}
+.recordNum-item:first-child{
+  border-left: none;
+}
+.recordNum-num{
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-size: 46rpx;
+  font-weight: bold;
+  line-height: 50rpx;
+}
+.recordNum-uint{
+  font-size: 24rpx;
+  color:#8c8c8c;
+  text-align: center;
+}

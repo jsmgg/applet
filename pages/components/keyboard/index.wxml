@@ -1,0 +1,32 @@
+<!--pages/components/keyboard/index.wxml-->
+<import src="../../../tpl/image.wxml" />
+<view class="com-keyboard">
+
+  <view class="items">
+    <view class="item" hover-class="item-hover" hover-stay-time="100" data-num="1" catchtap="js_num">1</view>
+    <view class="item" hover-class="item-hover" hover-stay-time="100" data-num="2" catchtap="js_num">2</view>
+    <view class="item" hover-class="item-hover" hover-stay-time="100" data-num="3" catchtap="js_num">3</view>
+  </view>
+
+  <view class="items">
+    <view class="item" hover-class="item-hover" hover-stay-time="100" data-num="4" catchtap="js_num">4</view>
+    <view class="item" hover-class="item-hover" hover-stay-time="100" data-num="5" catchtap="js_num">5</view>
+    <view class="item" hover-class="item-hover" hover-stay-time="100" data-num="6" catchtap="js_num">6</view>
+  </view>
+
+  <view class="items">
+    <view class="item" hover-class="item-hover" hover-stay-time="100" data-num="7" catchtap="js_num">7</view>
+    <view class="item" hover-class="item-hover" hover-stay-time="100" data-num="8" catchtap="js_num">8</view>
+    <view class="item" hover-class="item-hover" hover-stay-time="100" data-num="9" catchtap="js_num">9</view>
+  </view>
+
+  <view class="items">
+    <view class="item" hover-class="item-hover" hover-stay-time="100" catchtap="js_dot" wx:if="{{dotLength>0}}">.</view>
+    <view class="item" wx:else></view>
+    <view class="item" hover-class="item-hover" hover-stay-time="100" data-num="0" catchtap="js_num">0</view>
+    <view class="item" hover-class="item-hover" hover-stay-time="100" catchtap="js_del">
+      <template is="image" data="{{style:'item-img',src:'/img/del-num.png'}}"></template>
+    </view>
+  </view>
+
+</view>

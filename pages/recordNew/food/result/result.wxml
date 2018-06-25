@@ -1,0 +1,43 @@
+<import src="../../../../tpl/image.wxml" />
+
+<view class="wrapper">
+  <view class="record-img">
+    <view class="img-wrap">
+        <template is="image" data="{{style:recordImgClass, src:viewPath}}"></template>
+        <view class="logo-wrap">
+            <template is="image" data="{{src: '/img/tip-logo.png'}}"></template>
+        </view>
+        <view class="shadow">
+          <view class="daka-count">
+            <text id="daka-count">{{checkinCount}}</text>次
+          </view>
+          <view class="daka-days-wrap" wx:if="{{streakDayCount > 0}}">
+            <template is="image" data="{{src:'/img/dakaDaysBg.png'}}"></template>
+            <view class="daka-days">连续满卡<text>{{streakDayCount}}</text>天</view>
+          </view>
+        </view>
+    </view>
+  </view>
+  <view class="record-text">
+    <text class="title">{{typeText}}</text>
+    <text class="totalCalorie">({{totalCalorie}})</text>
+    <image class="img" mode="scaleToFill" src="/img/checkin-label.png" >
+        <text class="from">{{from}}</text>
+    </image>
+    <view class="description">
+        <block wx:for="{{recipeTextList}}">
+            <text class="name">{{item.name}}</text>
+            <text class="calorie">{{item.text}}</text>
+        </block>
+    </view>
+  </view>
+  <view class="generate" style="background:url({{cdnHost}}generate-btn-bg.png) bottom center repeat-x;background-size:contain;"><view class="btn" bindtap="operateTip">发送到微信群</view></view>
+  <view class="mask" wx:if="{{showMask}}">
+    <view>
+      <image src="../../../img/record-result-mask-cursor.png" class="ios-img"></image>
+      <view class="tip">生成图片后，长按保存/发送</view>
+      <view class="tip" >获教练详细评价</view>
+      <view class="btn" bindtap="generateImg">知道了</view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,39 @@
+<import src="../../../tpl/image.wxml"/>
+<include src="../../../tpl/netError/netError.wxml" wx:if="{{networkType=='none'}}"/>
+<view class="container" wx:if="{{networkType!='none'&&loadend}}">
+  <view class="topBox">
+    <template is="image" data="{{style:'rankTitle',src:'/img/rankTitle.png'}}"></template>
+    <template is="image" data="{{style:'rankNavBg1',src:'/img/rankNavBg1.png'}}"></template>
+    <view class="ruleBtn" bindtap="js_showRule" wx:if="{{pageType=='star'&&showStarList==1}}">规则</view>
+  </view>
+  <view class="navs" wx:if="{{showStarTab==1}}">
+    <template is="image" data="{{style:'rankNavBg2',src:'/img/rankNavBg2.png'}}"></template>
+    <view class="item{{pageType=='friend'?' selected':''}}" bindtap="js_changeNav" data-type="friend">
+      好友排行
+      <template is="image" data="{{style:'navSelected',src:'/img/navSelected.png'}}"></template>
+    </view>
+    <view class="item{{pageType=='star'?' selected':''}}" bindtap="js_changeNav" data-type="star">
+      明星排行
+      <template is="image" data="{{style:'navSelected',src:'/img/navSelected.png'}}"></template>
+    </view>
+  </view>
+
+
+<include src="scrollView/scrollView.wxml" wx:if="{{pageType=='friend'}}"/>
+<view class="lookme" bindtap="js_myrank" wx:if="{{pageType=='friend'&&myRank}}">查看我的排名</view>
+
+
+<include src="scrollView/scrollView.wxml" wx:if="{{pageType=='star'&&showStarList==1}}"/>
+<view class="starBtns" wx:if="{{pageType=='star'&&showStarList==1&&isShowList==1}}">
+  <view class="btn des" wx:if="{{isOnList==1 && isUpload==1}}">上传资料</view>
+  <navigator openType="redirect" url="/pages/personal/rankH5/upload/upload" class="btn" wx:if="{{isOnList==1 && isUpload!=1}}">上传资料</navigator>
+
+  <view class="line" wx:if="{{isOnList==1}}"></view>
+  <view bindtap="js_starList" class="btn looklist">查看人气</view>
+  
+</view>
+<include src="starRank/desc.wxml" wx:if="{{pageType=='star'&&showStarList!=1}}"/>
+<include src="starRank/rule.wxml" wx:if="{{showRule}}"/>
+
+
+</view>

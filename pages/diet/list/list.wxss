@@ -1,0 +1,165 @@
+/* list.wxss */
+page{
+  height: 100%;
+  background:#f2f2f2;
+}
+
+.topnav{
+  width:100%;
+  height: 115rpx;
+  display: flex;
+  flex-direction:row;
+  background:#fff;
+  position: fixed;
+  left:0;
+  top:0;
+  z-index:2;
+}
+.topnav .item{
+  flex:1;
+  height: 115rpx;
+  text-align: center;
+}
+.topnav .item text{
+  height: 108rpx;
+  line-height: 108rpx;
+  font-size:32rpx;
+  color:rgba(0,0,0,0.9);
+  border-bottom:6rpx solid #fff;
+  display: inline-block;
+  font-weight: bold;
+}
+.topnav .selected text{
+  border-bottom:6rpx solid #2cb190;
+  color:#2cb190;
+}
+
+
+.swiperWrap{
+  margin-top:115rpx;
+  width:100%;
+  height: 1093rpx;
+}
+.swiperWrap.margin0{
+  margin-top:0;
+}
+.swiperBox{
+  width:100%;
+  height: 1093rpx;
+  overflow: hidden;
+}
+
+.swiperBox .itemScroll{
+  height: 1053rpx;
+}
+
+.swiperBox .item{
+  margin-top:88rpx;
+  position: relative;
+  box-sizing: border-box;
+  width:100%;
+  padding:0 40rpx;
+}
+
+.swiperBox .item .title{
+  position:absolute;
+  height: 60rpx;
+  line-height: 60rpx;
+  padding:0 50rpx;
+  font-size:24rpx;
+  font-weight: bold;
+  color:#fff;
+  background:#d5975c;
+  z-index:1;
+  top:-30rpx;
+  border-radius:30rpx 30rpx 30rpx 0;
+}
+.swiperBox .item .title0{
+  background:#d5975c;
+}
+.swiperBox .item .title1{
+  background:#a1b8c0;
+}
+.swiperBox .item .title2{
+  background:#6fb253;
+}
+.swiperBox .item .title3{
+  background:#f2b600;
+}
+
+.swiperBox .item .content{
+  padding:50rpx 30rpx 40rpx 30rpx;
+  background:#fff;
+  border-radius:10rpx;
+  font-size:30rpx;
+  color:rgba(0,0,0,0.8);
+  box-shadow: 4px 4px 8px rgba(56,56,56,0.1);
+}
+.swiperBox .item .recommend{
+  margin-top:20rpx;
+}
+.swiperBox .item .dot{
+  width:24rpx;
+  height: 24rpx;
+  margin-right:20rpx;
+}
+.swiperBox .item .taboo{
+  margin-top:20rpx; 
+}
+.swiperBox .item .name{
+  font-size:30rpx;
+  color:#000;
+  font-weight:bold;
+}
+.swiperBox .item .value{
+  font-size:30rpx;
+  color:rgba(0,0,0,0.8);
+}
+.emptyBottom{
+  width: 100%;
+  height: 30rpx;
+}
+
+.dkbox{
+  width: 100%;
+  height: 90rpx;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  padding:80rpx 0 40rpx 0;
+  z-index: 20;
+}
+.tmpdk{
+  width: 100%;
+  height: 170rpx;
+}
+.dkbox .opacity{
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 209rpx;
+  z-index: 1;
+}
+.dkbox .dkbtn{
+  position: relative;
+  z-index: 2;
+  margin:0 auto;
+  width: 400rpx;
+  height: 90rpx;
+  text-align: center;
+  line-height: 90rpx;
+  color: #fff;
+  font-size: 32rpx;
+  background:#2cb190;
+  border-radius: 45rpx;
+}
+
+.netError{
+  position: absolute;
+  width: 363rpx;
+  height: 355rpx;
+  left: 50%;
+  top:50%;
+  transform: translate3d(-50%,-50%,0);
+}

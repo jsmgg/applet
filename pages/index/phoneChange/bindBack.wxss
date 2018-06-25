@@ -1,0 +1,41 @@
+.bindBackView{
+  position:fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background:rgba(0,0,0,0.7);
+  display: flex;
+  align-items: center;
+  justify-content:center;
+  padding:0 70rpx;
+  z-index: 100;
+}
+.bindBackView-tips{
+  font-size: 24rpx;
+  text-align: center;
+  color:#ec6841;
+  margin-top: 40rpx;
+}
+.bindBackView-content{
+  width: 100%;
+  color: #fff;
+  font-size: 32rpx;
+}
+
+.bindBackView-close{
+  position: absolute;
+  right: 0rpx;
+  top: 0rpx;
+  z-index: 10;
+  width: 100rpx;
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.bindBackView-close-img{
+  display: block;
+  width: 24rpx;
+  height: 25rpx;
+}

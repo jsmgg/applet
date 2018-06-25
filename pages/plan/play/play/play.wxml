@@ -1,0 +1,18 @@
+<import src="../../../../tpl/image.wxml" />
+
+<view class="playView">
+  <view class="playView-video">
+    <video id="js_video{{videoKey}}" class="playView-video-label" src="{{url}}" autoplay="{{true}}" bindended="js_end" bindpause="js_pause" controls="{{false}}" loop="{{false}}" muted="{{false}}" bindplay="js_play" bindtimeupdate="js_update" objectFit="cover"></video>
+  </view>
+  <view class="playView-coverView-bottom">
+    <view class="playView-coverView-txt">{{motionName}}</view>
+    <view class="playView-coverView-time">{{time}}</view>
+  </view>
+  <view class="playView-btn">
+    <view class="playView-pro" style="width:{{proWidth}};transition-duration:{{proTime}}ms;"></view>
+    <template wx:if="{{prev==1}}" is="image" data="{{src:'/img/planChange.png',style:'playView-prev',bindtap:'js_prev'}}"></template>
+    <template wx:if="{{playView.playIng==1}}" is="image" data="{{src:'/img/planStop.png',style:'playView-stop',bindtap:'js_playView',id:'video-pauseBtn'}}"></template>
+    <template wx:if="{{playView.playIng==0}}" is="image" data="{{src:'/img/playStart.png',style:'playView-stop',bindtap:'js_playView',id:'video-playBtn'}}"></template>
+    <template wx:if="{{next}}" is="image" data="{{src:'/img/planChange.png',style:'playView-next',bindtap:'js_next',id:'video-next-btn'}}"></template>
+  </view>
+</view>

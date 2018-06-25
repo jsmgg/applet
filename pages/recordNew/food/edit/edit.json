@@ -1,0 +1,7 @@
+{
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTextStyle": "black",
+  "usingComponents":{
+    "component-keyboard":"/pages/components/keyboard/index"
+  }
+}

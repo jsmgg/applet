@@ -1,0 +1,19 @@
+<!--days.wxml-->
+<import src="../../../tpl/image.wxml"/>
+<include src="../../../tpl/netError/netError.wxml" wx:if="{{networkType=='none'}}"/>
+
+<view class="container" wx:if="{{networkType!='none'}}">
+  <view class="tipsView" wx:if="{{isEnd==1&&isJoinAdvancedCamp!=1}}">
+    <view>您已结营，如对进阶营感兴趣，</view>
+    <view>请咨询你的教练</view>
+  </view>
+  <navigator class="planItem{{item._formatDate==today?' selected':''}}" wx:for="{{planList}}" wx:for-item="item" wx:key="index" openType="redirect" url="/pages/plan/index/index?applyId={{applyId}}&date={{item._date}}">
+   <template is="image" data="{{style:'bg',src:'/img/planSelected.jpg'}}" wx:if="{{item._formatDate==today}}"></template>
+    <view class="leftBox">
+      <text class="trem lineDot">{{item.name}}</text>
+      <text class="day">{{item._formatDate}}</text>
+    </view>
+    <template is="image" data="{{style:'img',src:'/img/'+(item.fig?'overplan':'nostartplan')+'.png'}}" wx:if="{{item.type==0}}"></template>
+  </navigator>
+</view>
+

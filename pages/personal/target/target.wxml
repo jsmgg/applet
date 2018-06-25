@@ -1,0 +1,209 @@
+<import src="../../../tpl/image.wxml" />
+
+<view bindtap="hideTermList">
+    <view class="target-progress-wrap">
+        <view class="header">
+            <view class="left">
+                <view class="track">
+                    <view class="block {{right}}"></view>
+                    <view class="btn-group" bindtap="toggle">
+                        <view class="weight {{weightSelect}}">体重</view>
+                        <view class="waistline {{waistlineSelect}}">腰围</view>
+                    </view>
+                </view>
+            </view>
+            <view class="right">
+                <view class="last-target" wx:if="{{showTargetBtn}}">
+                    <view class="last-target-btn" catchtap="toggleTermList">往期目标</view>
+                    <view class="term-list" wx:if="{{showTermList}}">
+                        <view class="index" wx:if="{{showTermList}}"></view>
+                        <view
+                            class="term {{ term.termKey === currentTermKey ? 'selected' : ''}}"
+                            wx:for="{{termList}}"
+                            wx:for-item="term"
+                            data-term-key="{{term.termKey}}"
+                            catchtap="switchTerm">
+                            <view class="term-title">{{term.name}}</view>
+                            <view class="term-state" wx:if="{{term.state}}">{{term.state}}</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="contents">
+            <view class="target-progress">
+                <canvas class="target-progress-circle" canvas-id="targetProgress">
+                    <view class="target-reduce">{{reduceValue}}</view>
+                    <view class="target-reduce-info">{{reduceInfo}}</view>
+                    <view class="target-diff">{{reduceDiff}}</view>
+                    <view class="target-diff">
+                        <text>{{reduceDiffTip1}}</text>
+                        <text class="target-diff-value"> {{reduceDiffValue}} </text>
+                        <text>{{reduceDiffTip2}}</text>
+                    </view>
+                </canvas>
+            </view>
+        </view>
+    </view>
+    <view class="trend-wrap">
+        <view class="trend-tab-wrap">
+            <view id="{{index}}" class="trend-tab {{item.class}}" wx:for="{{tabList}}" bindtap="tabSwitch">
+                <text>{{item.name}}</text>
+                <view class="trend-tab-bottom"></view>
+            </view>
+        </view>
+        <view class="target-list-wrap">
+            <view hidden="{{tabList[0].hidden}}" class="target-list">
+                <view class="trend">
+                    <view class="trend-title-wrap">
+                        <template is="image" data="{{src: '/img/weightBg.png', style: 'bg'}}"></template>
+                        <view class="trend-title">体 重</view>
+                    </view>
+                    <view class="trend-content">
+                        <canvas class="curves" canvas-id="weightCurve"></canvas>
+                    </view>
+                </view>
+                <view class="trend">
+                    <view class="trend-title-wrap">
+                        <template is="image" data="{{src: '/img/waistBg.png', style: 'bg'}}"></template>
+                        <view class="trend-title">腰 围</view>
+                    </view>
+                    <view class="trend-content">
+                        <canvas class="curves" canvas-id="waistLineCurve"></canvas>
+                    </view>
+                </view>
+            </view>
+            <view hidden="{{tabList[1].hidden}}" class="target-list">
+                <view class="target">
+                    <view class="canvas-wrap">
+                        <canvas class="progress" canvas-id="breakfast">
+                            <view class="progress-info">
+                                <view class="value">{{breakfast.completePercent}}%</view>
+                                <view class="label">完成率</view>
+                            </view>
+                        </canvas>
+                    </view>
+                    <view class="info-wrap">
+                        <view class="info-title breakfast">早 餐</view>
+                        <view class="info-check">
+                            <view class="check">
+                                <template is="image" data="{{src: '/img/breakfastCircle.png'}}"></template>
+                                <view class="check-count">
+                                    打卡：
+                                    <text class="check-count-value">{{breakfast.checkInCount}}</text>
+                                    <text class="check-count-unit"> 次</text>
+                                </view>
+                            </view>
+                            <view class="uncheck">
+                                <template is="image" data="{{src: '/img/uncheckCircle.png'}}"></template>
+                                <view class="check-count">
+                                    缺卡：
+                                    <text class="check-count-value">{{breakfast.unCheckCount}}</text>
+                                    <text class="check-count-unit"> 次</text>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view class="target">
+                    <view class="canvas-wrap">
+                        <canvas class="progress" canvas-id="lunch">
+                            <view class="progress-info">
+                                <view class="value">{{lunch.completePercent}}%</view>
+                                <view class="label">完成率</view>
+                            </view>
+                        </canvas>
+                    </view>
+                    <view class="info-wrap">
+                        <view class="info-title lunch">午 餐</view>
+                        <view class="info-check">
+                            <view class="check">
+                                <template is="image" data="{{src: '/img/lunchCircle.png'}}"></template>
+                                <view class="check-count">
+                                    打卡：
+                                    <text class="check-count-value">{{lunch.checkInCount}}</text>
+                                    <text class="check-count-unit"> 次</text>
+                                </view>
+                            </view>
+                            <view class="uncheck">
+                                <template is="image" data="{{src: '/img/uncheckCircle.png'}}"></template>
+                                <view class="check-count">
+                                    缺卡：
+                                    <text class="check-count-value">{{lunch.unCheckCount}}</text>
+                                    <text class="check-count-unit"> 次</text>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view class="target">
+                    <view class="canvas-wrap">
+                        <canvas class="progress" canvas-id="dinner">
+                            <view class="progress-info">
+                                <view class="value">{{dinner.completePercent}}%</view>
+                                <view class="label">完成率</view>
+                            </view>
+                        </canvas>
+                    </view>
+                    <view class="info-wrap">
+                        <view class="info-title dinner">晚 餐</view>
+                        <view class="info-check">
+                            <view class="check">
+                                <template is="image" data="{{src: '/img/dinnerCircle.png'}}"></template>
+                                <view class="check-count">
+                                    打卡：
+                                    <text class="check-count-value">{{dinner.checkInCount}}</text>
+                                    <text class="check-count-unit"> 次</text>
+                                </view>
+                            </view>
+                            <view class="uncheck">
+                                <template is="image" data="{{src: '/img/uncheckCircle.png'}}"></template>
+                                <view class="check-count">
+                                    缺卡：
+                                    <text class="check-count-value">{{dinner.unCheckCount}}</text>
+                                    <text class="check-count-unit"> 次</text>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view hidden="{{tabList[2].hidden}}" class="target-list">
+                <view class="target">
+                    <view class="canvas-wrap">
+                        <canvas class="progress" canvas-id="training">
+                            <view class="progress-info">
+                                <view class="value">{{sports.completePercent}}%</view>
+                                <view class="label">完成率</view>
+                            </view>
+                        </canvas>
+                    </view>
+                    <view class="info-wrap">
+                        <view class="info-title training">运 动</view>
+                        <view class="info-check">
+                            <view class="check">
+                                <template is="image" data="{{src: '/img/trainingCircle.png'}}"></template>
+                                <view class="check-count">
+                                    打卡：
+                                    <text class="check-count-value">{{sports.checkInCount}}</text>
+                                    <text class="check-count-unit"> 次</text>
+                                </view>
+                            </view>
+                            <view class="uncheck">
+                                <template is="image" data="{{src: '/img/uncheckCircle.png'}}"></template>
+                                <view class="check-count">
+                                    缺卡：
+                                    <text class="check-count-value">{{sports.unCheckCount}}</text>
+                                    <text class="check-count-unit"> 次</text>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="logo-wrap">
+        <template is="image" data="{{src: '/img/targetLogo.png'}}"></template>
+    </view>
+</view>

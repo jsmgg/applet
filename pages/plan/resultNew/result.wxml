@@ -1,0 +1,94 @@
+<include src="../../../tpl/netError/netError.wxml" wx:if="{{networkType=='none'}}"/>
+<import src="../../../tpl/image.wxml" />
+
+<view class="wrapper" wx:if="{{networkType!='none' && loadend}}">
+  <view class="tip">
+    <template is="image" data="{{src:imgPath}}"></template>
+    <view class="tip-bottom">
+      <view class="checkInCount-wrap">
+        <text class="checkInCount">{{checkinCount}}</text>次
+      </view>
+      <view class="tip-days-wrap" wx:if="{{streakDayCount > 0}}">
+        <template is="image" data="{{src:'/img/dakaDaysBg.png'}}"></template>
+        <view class="tip-days">连续满卡{{streakDayCount}}天</view>
+      </view>
+    </view>
+    <view class="tip-logo-wrap">
+        <template is="image" data="{{src: '/img/tip-logo.png'}}"></template>
+    </view>
+  </view>
+  <view class="title-wrapper">
+    <text class="title">{{typeText}}</text>
+    <image class="img" mode="scaleToFill" src="/img/checkin-label.png" >
+        <text class="from">{{levelLabel}}</text>
+    </image>
+  </view>
+  <view class="info">
+    <view class="info-item">
+      <view class="info-item-num">{{motionNum}}</view>
+      <view class="info-item-text">动作</view>
+      <view class="info-item-line"></view>
+    </view>
+    <view class="gap-wrap">
+        <view class="gap"></view>
+    </view>
+    <view class="info-item">
+      <view class="info-item-num">{{duration}}</view>
+      <view class="info-item-text">分钟</view>
+      <view class="info-item-line"></view>
+    </view>
+    <view class="gap-wrap">
+        <view class="gap"></view>
+    </view>
+    <view class="info-item">
+      <view class="info-item-num">{{consume}}</view>
+      <view class="info-item-text">卡路里</view>
+    </view>
+  </view>
+  <block wx:if="{{status >= 3}}">
+    <view class="btns" style="background:url({{cdnHost}}generate-btn-bg.png) top center repeat-x;background-size:cover;">
+        <view class="btn btns-send {{isCheckedIned?'btn-disabled':''}}" bindtap="js_operateTip" id="send-instructor">发送到微信群</view>
+        <view class="btn btns-again" id="resultPage-playBtn" bindtap='js_again'>再练一次</view>
+      </view>
+  </block>
+  <block wx:else>
+    <view class="btns" style="background:url({{cdnHost}}generate-btn-bg.png) top center repeat-x;background-size:cover;">
+        <view class="btn-only btns-again" id="resultPage-playBtn" bindtap='js_again'>再练一次</view>
+    </view>
+  </block>
+  <view class="mask" wx:if="{{showMask}}">
+      <view>
+        <image src="../../../img/record-result-mask-cursor.png" class="ios-img"></image>
+        <view class="tip-txt">生成图片后，长按保存/发送</view>
+        <view class="tip-txt" >获教练详细评价</view>
+        <view class="btn" bindtap="js_previewAndCheckin">知道了</view>
+      </view>
+    </view>
+</view>
+
+<!--编辑运动强度-->
+<view class="edit-layer" wx:if="{{select && !isEnd}}" capture-catch:touchstart="cancelSelect"></view>
+<view class="edit-wrapper" wx:if="{{select && !isEnd}}">
+    <!--编辑框头部-->
+    <view class="edit-header">运动感受程度</view>
+    <!--编辑框内容-->
+    <view class="edit-content">
+        <view class="level-list">
+            <image
+                class="level-item"
+                mode="aspectFit"
+                wx:for="{{levelList}}"
+                wx:for-index="idx"
+                src="{{item}}"
+                data-level="{{4-idx}}"
+                capture-catch:touchstart="level"></image>
+        </view>
+        <view class="level-desc">{{levelDesc}}</view>
+    </view>
+    <!--编辑框底部-->
+    <view class="edit-footer">
+        <view catchtap="selected">
+            <template is="image" data="{{src: '/img/next.png', style: 'btn', bindtap: 'levelSelected'}}"></template>
+        </view>
+    </view>
+</view>

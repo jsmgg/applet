@@ -1,0 +1,26 @@
+<!--index.wxml-->
+<import src="countryList/countryList.wxml"/>
+<import src="../../tpl/image.wxml"/>
+<view class="container">
+  <text class="title">绑定手机号</text>
+  <view class="country item" bindtap="showCountryList">
+    <text class="text lineDot">{{country}}</text>
+    <view class="num">
+      <text>{{areaCode}}</text>
+      <template is="image" data="{{src:'/img/right.png'}}"></template>
+    </view>
+  </view>
+  <view class="item">
+    <input type="number" nmae="mobile" class="tel" placeholder="请输入你的手机号码" placeholder-class="placeholderStyle" maxlength="20" value="{{mobile}}" confirm-type="next" bindinput="bindTelInput"/>
+  </view>
+  <view class="item">
+    <input type="number" class="code" placeholder="请输入验证码" maxlength="6" placeholder-class="placeholderStyle" bindinput="bindCodeInput"/>
+    <view class="getcode" bindtap="getCode">{{codeMsg}}</view>
+  </view>
+  <view bindtap="submit" class="blue-btn" hover="{{true}}" hover-class="btnHover" hover-start-time="0" hover-stay-time="100">完成</view>
+<block wx:if="{{showCountryList}}">
+  <template is="countryList" data="{{countryList:countryList}}"/>
+</block>
+
+  <include src="confirm/confirm.wxml" wx:if="{{showConfirm}}"/>
+</view>

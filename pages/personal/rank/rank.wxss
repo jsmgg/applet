@@ -1,0 +1,134 @@
+/* rank.wxss */
+@import "scrollView/scrollView.wxss";
+@import "starRank/desc.wxss";
+@import "starRank/rule.wxss";
+page{
+  width: 100%;
+  height: 100%;
+  background:#fff;
+}
+.container{
+  background:#fff;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.topBox{
+  width: 100%;
+  height: 211rpx;
+  position: relative;
+}
+.topBox .rankNavBg1{
+  display: block;
+  width: 100%;
+  height: 211rpx;
+}
+.topBox .rankTitle{
+  position: absolute;
+  left: 20rpx;
+  top: 40rpx;
+  z-index: 1;
+  width: 324rpx;
+  height: 116rpx;
+}
+
+.navs{
+  width: 100%;
+  height: 100rpx;
+  position: relative
+}
+.navs .rankNavBg2{
+  width: 100%;
+  height: 100rpx;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.navs .item{
+  position: relative;
+  z-index: 2;
+  color:rgba(255,255,255,0.5);
+  display: inline-block;
+  padding:0 40rpx;
+  line-height: 100rpx;
+  font-size: 30rpx;
+}
+.item .navSelected{
+  display: none;
+  position: absolute;
+  width: 26rpx;
+  height:13rpx;
+  left: 50%;
+  margin-left: -13rpx;
+  bottom:-1rpx;
+}
+.item.selected{
+  color:#fff;
+}
+.item.selected .navSelected{
+  display: block;
+}
+
+.ruleBtn{
+  position: absolute;
+  right: 20rpx;
+  top: 30rpx;
+  width: 100rpx;
+  height: 40rpx;
+  border-radius: 20rpx;
+  background: #3e454c;
+  font-size: 24rpx;
+  line-height: 40rpx;
+  text-align: center;
+  color:rgba(255,255,255,0.4);
+}
+.lookme{
+  width: 100%;
+  height: 100rpx;
+  background:#50c5af;
+  color:#fff;
+  font-size: 32rpx;
+  text-align: center;
+  line-height: 100rpx;
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  bottom: 0;
+}
+.starBtns{
+  width: 100%;
+  height: 100rpx;
+  background:#50c5af;
+  color:#fff;
+  font-size: 32rpx;
+  text-align: center;
+  line-height: 100rpx;
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.starBtns .line{
+  display: block;
+  width: 2rpx;
+  height: 20rpx;
+  background:rgba(0,0,0,0.2);
+}
+.starBtns .btn{
+  display: block;
+  flex: 1;
+  line-height: 100rpx;
+}
+.starBtns .looklist{
+  color:rgba(0,0,0,0.6);
+}
+.starBtns .des{
+  color:rgba(255,255,255,0.2);
+}
+

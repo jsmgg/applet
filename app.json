@@ -1,0 +1,44 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/bindMobile/bindMobile",
+    "pages/plan/play/play",
+    "pages/plan/index/index",
+    "pages/diet/list/list",
+    "pages/diet/detail/detail",
+    "pages/cards/cards",
+    "pages/personal/index/index",
+    "pages/plan/list/list",
+    "pages/plan/days/days",
+    "pages/personal/rank/rank",
+    "pages/personal/test/test",
+    "pages/personal/rankH5/vote/vote",
+    "pages/personal/rankH5/upload/upload",
+    "pages/personal/rankH5/starList/starList",
+    "pages/personal/target/target",
+    "pages/plan/resultNew/result",
+    "pages/recordNew/food/result/result",
+    "pages/recordNew/food/reference/reference",
+    "pages/recordNew/train/edit/edit",
+    "pages/recordNew/train/result/result",
+    "pages/recordNew/food/edit/edit",
+    "pages/personal/allow/allow",
+    "pages/personal/report/report",
+    "pages/personal/reportDetail/reportDetail",
+    "pages/webview/index"
+  ],
+  "window": {
+    "backgroundColor": "#fff",
+    "backgroundTextStyle": "dark",
+    "enablePullDownRefresh": false,
+    "navigationBarBackgroundColor": "#222",
+    "navigationBarTitleText": "口袋减脂营",
+    "navigationBarTextStyle": "dark"
+  },
+  "networkTimeout": {
+    "request": 30000,
+    "connectSocket": 30000,
+    "uploadFile": 30000,
+    "downloadFile": 30000
+  }
+}

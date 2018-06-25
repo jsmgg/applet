@@ -1,0 +1,313 @@
+.wrapper{
+    padding-bottom:180rpx;
+    width:100%;
+    box-sizing:border-box;
+}
+.record-img{
+    width:100%;
+    margin-top:50rpx;
+}
+.record-img .img-wrap{
+    position:relative;
+    width:690rpx;
+    margin: 0 auto;
+    overflow:hidden;
+}
+.record-img .img{
+    width:690rpx;
+    height:690rpx;
+    box-sizing:border-box;
+    display:block;
+}
+.record-img image{
+  width:690rpx;
+}
+
+.record-img .img.type-height{
+    height:830rpx;
+}
+.record-img .img.type-width{
+    height:515rpx;
+
+}
+.record-img .shadow{
+    width:100%;
+    z-index:1;
+    position:absolute;
+    left:0;
+    bottom:0;
+}
+.record-img .logo-wrap{
+    width:110rpx;
+    height:36rpx;
+    position:absolute;
+    right: 0;
+    top: 0;
+}
+.record-img .logo-wrap image {
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    top: 0;
+    right: 0;
+}
+
+.record-img .daka-count{
+    display: block;
+    height: 60rpx;
+    line-height: 60rpx;
+    margin-right: 24rpx;
+    margin-bottom: 18rpx;
+    text-align: right;
+    color:#fff;
+    font-size:30rpx;
+    z-index:2;
+}
+.record-img .daka-count #daka-count{
+    font-family: "Futura-CondensedExtraBold", sans-serif;
+    font-size:72rpx;
+    font-weight:bold;
+}
+.record-img .daka-days-wrap {
+    position: relative;
+    height: 70rpx;
+    font-size: 30rpx;
+    color: #fff;
+}
+.record-img .daka-days-wrap image {
+  width: 100%;
+  height: 70rpx;
+}
+.record-img .daka-days-wrap .daka-days {
+  position: absolute;
+  height: 70rpx;
+  line-height: 70rpx;
+  left: 90rpx;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  font-weight: bold;
+}
+.record-img #name{
+    font-size:30rpx;
+    color:#fff;
+    position:absolute;
+    left:20rpx;
+    bottom:20rpx;
+    z-index:2;
+}
+.record-text{
+    display: block;
+    margin-top: 80rpx;
+    padding: 0 40rpx;
+    font-size: 0;
+}
+.record-text .title{
+    font-size: 36rpx;
+    font-weight: bold;
+    vertical-align: middle;
+}
+.record-text .totalCalorie {
+    font-size: 36rpx;
+    font-weight: bold;
+    margin: 0 40rpx 0 26rpx;
+    vertical-align: middle;
+}
+.record-text .img {
+    position: relative;
+    width: 120rpx;
+    height: 40rpx;
+    vertical-align: middle;
+}
+.record-text .img .from {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24rpx;
+    color: white;
+    text-align: center;
+    text-indent: 10rpx;
+}
+.record-text .description {
+    display: block;
+    line-height: 50rpx;
+    margin-top: 30rpx;
+    white-space: pre-wrap;
+    word-break: break-all;
+    font-size: 0;
+}
+.record-text .description .name {
+    font-size: 30rpx;
+    text-align: center;
+    word-break: break-all;
+    color: rgba(0, 0, 0, .5);
+}
+.record-text .description .calorie {
+    line-height: 58rpx;
+    border-radius: 25rpx;
+    font-size: 30rpx;
+    text-align: center;
+    word-break: break-all;
+    color: rgba(0, 0, 0, .85);
+}
+.generate{
+    z-index:3;
+    position:fixed;
+    bottom:0;
+    left:0;
+    width:100%;
+    height:180rpx;
+    background-position:bottom center;
+    background-size:contain;
+}
+.generate .btn{
+    font-size:32rpx;
+    line-height:90rpx;
+    text-align:center;
+    color:#fff;
+    font-weight:bold;
+
+    width:400rpx;
+    height:90rpx;
+    position:absolute;
+    bottom:45rpx;
+    left:174rpx;
+    background:#2cb190;
+    border-radius:42rpx;
+    /* box-shadow: 0 15rpx 30rpx 5rpx rgba(44, 177, 144, .2); */
+}
+
+#imgCanvas{
+    position:fixed;
+    left:0;
+    top:0;
+    width:1000rpx;
+    height:1000rpx;
+    background:#fff;
+    margin-left:2000rpx;
+    margin-top:2000rpx;
+}
+
+.myCanvas{
+  position:fixed;
+  left:0;
+  top:0;
+  width:750rpx;
+  height:1276rpx;
+  background:#fff;
+  z-index:-1;
+  visibility:hidden;
+  margin-top:3000rpx;
+  margin-left:1000rpx;
+}
+
+.myCanvas.canvas-normal{
+  height:1456rpx;
+}
+.myCanvas.canvas-height{
+  height:1606rpx;
+}
+.myCanvas.canvas-training{
+  height:1334rpx;
+}
+.mask{
+    width:100%;
+    height:100%;
+    position:fixed;
+    left:0;
+    top:0;
+    background:rgba(0,0,0,0.9);
+    z-index: 4;
+}
+.mask .ios-img{
+    width:122rpx;
+    height:178rpx;
+    margin:360rpx auto 40rpx;
+    display:block;
+}
+.mask .tip{
+    color:#fff;
+    font-size:32rpx;
+    text-align:center;
+}
+.mask .btn{
+    color:#2cb190;
+    border:2rpx solid #2cb190;
+    border-radius:50rpx;
+    width:300rpx;
+    line-height:90rpx;
+    text-align:center;
+    font-size:36rpx;
+    margin:130rpx auto 0;
+}
+.mask .andBox{
+  position: absolute;
+  top:0;
+  width:100%;
+}
+
+.mask .android-img{
+  width: 594rpx;
+  height: 478rpx;
+  margin-left: 126rpx;
+  display: block;
+}
+
+.edit-layer {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    background: rgba(0, 0, 0, .5);
+}
+.edit-wrapper {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-top-left-radius: 10rpx;
+    border-top-right-radius: 10rpx;
+    background: white;
+    padding: 0 80rpx;
+    z-index: 3;
+}
+.edit-wrapper .edit-header {
+    margin-bottom: 60rpx;
+    padding-top: 80rpx;
+    line-height: 42rpx;
+    font-size: 42rpx;
+    font-weight: bold;
+    text-align: center;
+}
+.edit-content {
+    margin-bottom: 100rpx;
+}
+.edit-content .level-list {
+    display: flex;
+    margin-bottom: 40rpx;
+}
+.edit-content .level-list .level-item {
+    flex: 1;
+    width: 95rpx;
+    height: 95rpx;
+}
+.edit-content .level-desc {
+    height: 30rpx;
+    text-align: center;
+    font-size: 30rpx;
+    line-height: 30rpx;
+    font-weight: bold;
+}
+.edit-wrapper .edit-footer {
+}
+.edit-wrapper .edit-footer .btn {
+    display: block;
+    width: 434rpx;
+    height: 128rpx;
+    margin: 0 auto;
+}

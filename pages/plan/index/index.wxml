@@ -1,0 +1,77 @@
+<import src="../../../tpl/image.wxml" />
+<include src="../../../tpl/netError/netError.wxml" wx:if="{{networkType=='none'}}"/>
+
+<view class="container planIndex" wx:if="{{networkType!='none'}}">
+  <template wx:if="{{typeStr!==''}}" is="image" data="{{src:'/img/plan_'+typeStr+'.png',style:'planIndex-bg'}}"></template>
+  <view class="planIndex-topBox">
+    <view class="topBox-tipsBox">
+      <navigator openType="redirect" url="/pages/plan/days/days?applyId={{applyId}}" class="topBox-day" hover-class="none" id="plan-moreBtn">
+        <text>{{day}}</text>
+        <template wx:if="{{!!applyId}}" is="image" data="{{src:'/img/planDay.png',style:'topBox-day-img'}}"></template>
+      </navigator>
+      <view class="topBox-hello lineDot">{{userNameTips}}</view>
+      <view class="topBox-level">
+        <text class="topBox-level-tips">今日训练计划</text>
+        <view class="topBox-level-num">
+          <text class="level">LV</text>
+          <text class="num">{{level}}</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="topParams">
+      <view class="topParams-list">
+        <view class="topParams-item">
+          <text class="topParams-num lineDot">{{motionNum}}</text>
+          <text class="topParams-txt">动作</text>
+        </view>
+        <view class="topParams-line"></view>
+        <view class="topParams-item">
+          <text class="topParams-num lineDot">{{duration}}</text>
+          <text class="topParams-txt">分钟</text>
+        </view>
+        <view class="topParams-line"></view>
+        <view class="topParams-item">
+          <text class="topParams-num lineDot">{{consume}}</text>
+          <text class="topParams-txt">卡路里</text>
+        </view>
+      </view>
+
+      <view wx:if="{{hasVideo}}" bindtap="js_playDay" class="topParams-btn">
+        马上训练
+      </view>
+    </view>
+  </view>
+
+  <block wx:if="{{bottomMod}}">
+    <view class="planList-title">
+      <view class="planList-title-val">
+        <text>进阶选练</text>
+        <navigator class="planList-more" openType="navigate" url="/pages/plan/list/list" wx:if="{{hasMore}}">
+          查看全部
+          <template is="image" data="{{src:'/img/planDay.png',style:'planList-more-img'}}"></template>
+        </navigator>
+      </view>
+      <text class="planList-title-tips">请确定基础训练已经做完</text>
+    </view>
+
+    <scroll-view scroll-x class="planList">
+      <view class="planList-wrap" style="width:{{listWidth}}rpx;">
+
+        <view class="planList-item" wx:for="{{list}}" wx:for-item="item" wx:key="index" data-index="{{index}}" bindtap="js_goplay" id="planListIndex-{{item.id}}">
+          <image src="{{item.imageUrl}}" class="planList-item-img"></image>
+          <view class="planList-item-opc"></view>
+          <text class="planList-item-title lineDot">{{item.trainName}}</text>
+        </view>
+
+      </view>
+      
+
+    </scroll-view>
+
+  </block>
+
+
+
+</view>
+

@@ -1,0 +1,22 @@
+<import src="../../../tpl/image.wxml"/>
+<view class="header-mod">
+  <view class="header-bg">
+    <view class="header-user">
+      <view class="header-logo-box" bindtap="js_personal_index">
+        <view class="header-pic">
+          <template is="image" data="{{style:'header-logo',src:avatarUrl?avatarUrl:'/img/defaultUser.png'}}"></template>
+        </view>
+        <template is="image" wx:if="{{unRead>0}}" data="{{style:'header-unRead',src:'/img/radiusTips.png'}}"></template>
+      </view>
+      <view class="header-uname lineDot">{{nickname}}</view>
+      <view class="header-term">{{termName}}</view>
+    </view>
+  </view>
+
+  <view class="header-bottom-bg">
+    <template is="image" data="{{style:'header-radiusbg',src:'/img/indexradius.png'}}"></template>
+  </view>
+
+
+</view>
+

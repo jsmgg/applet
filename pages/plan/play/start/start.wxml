@@ -1,0 +1,28 @@
+<import src="../../../../tpl/image.wxml" />
+<view class="playStart">
+  <view class="playStart-top">
+    <image src="{{cdnHost}}Fj4nka0hu1FLDI0fTHLiXcW4roVg" class="playStart-bg"></image>
+    <view class="playStart-title">预备</view>
+    <view class="playStart-params">
+      <view class="playStart-item">
+        <text class="playStart-num lineDot">{{motionNum}}</text>
+        <text class="playStart-txt">动作</text>
+      </view>
+      <view class="playStart-line"></view>
+      <view class="playStart-item">
+        <text class="playStart-num lineDot">{{duration}}</text>
+        <text class="playStart-txt">分钟</text>
+      </view>
+      <view class="playStart-line"></view>
+      <view class="playStart-item">
+        <text class="playStart-num lineDot">{{consume}}</text>
+        <text class="playStart-txt">卡路里</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="playStart-btn">
+    <template wx:if="{{startPage.playIng==1}}" is="image" data="{{src:'/img/planStop.png',style:'playStart-stop',bindtap:'js_startPage'}}"></template>
+    <template wx:if="{{startPage.playIng==0}}" is="image" data="{{src:'/img/playStart.png',style:'playStart-stop',bindtap:'js_startPage'}}"></template>
+  </view>
+</view>

@@ -1,0 +1,15 @@
+<import src="../../../tpl/image.wxml" />
+<view class="confirmView">
+  <view bindtap='js_confirm_close' class="confirmView-close">
+    <template is="image" data="{{style:'confirmView-close-img',src:'/img/delete.png'}}"></template>
+  </view>
+  
+  <view class="confirmView-content">
+    <view class="confirmView-h2">请确认</view>
+    <view class="confirmView-txt">当前手机号已经被其他账户占用！</view>
+    <view class="confirmView-txt">“确认绑定”会自动为您解绑原账户，并绑定到当前账户。</view>
+    <view class="confirmView-btnok" bindtap='js_confirm_ok'>确认绑定</view>
+    <view class="confirmView-canel" bindtap='js_confirm_close'>取消绑定</view>
+    
+  </view>
+</view>

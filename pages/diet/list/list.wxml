@@ -1,0 +1,72 @@
+<import src="../../../tpl/image.wxml"/>
+
+<view class="container" wx:if="{{loadend}}">
+<block wx:if="{{netError==0}}">
+  <view class="topnav" wx:if="{{!oneDay}}">
+    <view class="item{{current==0?' selected':''}}" bindtap="js_change" data-index="0">
+      <text>早餐</text>
+    </view>
+    <view class="item{{current==1?' selected':''}}" bindtap="js_change" data-index="1">
+      <text>午餐</text>
+    </view>
+    <view class="item{{current==2?' selected':''}}" bindtap="js_change" data-index="2">
+      <text>晚餐</text>
+    </view>
+    <view class="item{{current==3?' selected':''}}" bindtap="js_change" data-index="3">
+      <text>加餐</text>
+    </view>
+  </view>
+
+  <view class="swiperWrap margin0" wx:if="{{oneDay}}" style="height:auto;">
+    <view class="swiperBox" style="height:auto;">
+      <view class="itemScroll" style="height:auto;">
+        <view class="item" wx:for="{{item}}" wx:for-item="obj" wx:key="index">
+          <navigator class="" openType="navigate" url="/pages/diet/detail/detail?current={{obj.index}}&type={{type}}&dietLevel={{dietLevel}}">
+            <view class="title title{{index}}">{{obj.name}}</view>
+            <view class="content">{{obj.value}}</view>
+          </navigator>
+          <view class="recommend" wx:if="{{obj.recommend}}">
+            <template is="image" data="{{src:'/img/week1.jpg',style:'dot'}}"></template>
+            <text class="name">本周推荐：</text>
+            <text class="value">{{obj.recommend}}</text>
+          </view>
+          <view class="taboo" wx:if="{{obj.taboo}}">
+            <template is="image" data="{{src:'/img/week2.jpg',style:'dot'}}"></template>
+            <text class="name">本周禁忌：</text>
+            <text class="value">{{obj.taboo}}</text>
+          </view>
+        </view>
+        <view class="emptyBottom"></view>
+      </view>
+    </view>
+  </view>
+
+  <view class="swiperWrap" style="height:{{scrollHeight}}" wx:if="{{!oneDay}}">
+    <swiper class="swiperBox" style="height:{{scrollHeight}}" indicator-dots="{{false}}" autoplay="{{false}}" current="{{current}}" interval="2000" duration="300" circular="{{false}}" bindchange="dietSwiperChange">
+      <swiper-item wx:for="{{list}}" wx:for-item="item" wx:for-index="idx" wx:key="idx">
+        <scroll-view class="itemScroll" style="height:{{scrollHeight}}" scroll-y="{{true}}">
+          <view class="item" wx:for="{{item}}" wx:for-item="obj" wx:key="index">
+            <navigator class="" openType="navigate" url="/pages/diet/detail/detail?current={{obj.index}}&type={{type}}&dietLevel={{dietLevel}}">
+              <view class="title title{{index}}">{{obj.name}}</view>
+              <view class="content">{{obj.value}}</view>
+            </navigator>
+            <view class="recommend" wx:if="{{obj.recommend}}">
+              <template is="image" data="{{src:'/img/week1.jpg',style:'dot'}}"></template>
+              <text class="name">本周推荐：</text>
+              <text class="value">{{obj.recommend}}</text>
+            </view>
+            <view class="taboo" wx:if="{{obj.taboo}}">
+              <template is="image" data="{{src:'/img/week2.jpg',style:'dot'}}"></template>
+              <text class="name">本周禁忌：</text>
+              <text class="value">{{obj.taboo}}</text>
+            </view>
+          </view>
+          <view class="emptyBottom"></view>
+        </scroll-view>
+      </swiper-item>
+    </swiper>
+  </view>
+</block>
+  <template is="image" data="{{src:'/img/netError.png',style:'netError',bindtap:'js_reload'}}" wx:if="{{netError==1}}"></template>
+  
+</view>

@@ -1,0 +1,53 @@
+.ruleDialog{
+  position: fixed;
+  z-index: 200;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background:rgba(0,0,0,0.7);
+}
+.ruleBox{
+  padding: 60rpx;
+  position: absolute;
+  top:100rpx;
+  bottom: 200rpx;
+  left: 60rpx;
+  right: 60rpx; 
+  background:#fff;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+
+  border-radius:20rpx;
+}
+.ruleBox .contentBox{
+  width: 100%;
+  flex: 1;
+  -webkit-overflow-scrolling:touch;
+  overflow: auto;
+}
+.ruleBox .title{
+  font-size: 36rpx;
+  font-weight: bold;
+  color:#272f37;
+  width: 100%;
+  text-align: center;
+}
+.ruleBox .title2{
+  font-size: 26rpx;
+  font-weight: bold;
+  margin-top: 60rpx;
+}
+
+.ruleBox .txt{
+  font-size: 26rpx;
+  line-height: 45rpx;
+}
+
+.ruleBox .desc{
+  color:#8c8c8c;
+  font-size: 24rpx;
+  margin-top: 50rpx;
+  padding-bottom: 10rpx;
+}

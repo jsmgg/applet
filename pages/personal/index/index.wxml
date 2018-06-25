@@ -1,0 +1,57 @@
+<import src="../../../tpl/image.wxml"/>
+
+<view class="container" wx:if="{{loadEnd}}">
+  <view class="contentBox">
+    <view class="topBox">
+      <view class="userLogo">
+        <view class="radiusBox">
+          <template is="image" data="{{style:'img',src:avatar?avatar:'/img/defaultUser.png'}}"></template>
+        </view>
+      </view>
+
+      <view class="userName">{{name}}</view>
+      <button class="contact" open-type="contact" session-from="jzy-applet-personal">
+        <template is="image" data="{{style:'icon', src: '/img/kefuIcon.png'}}"></template>
+      </button>
+    </view>
+    
+    <view class="userParams">
+      <view class="rankBox">
+        <template is="image" data="{{style:'rankNav',src:'/img/rankNav.png',bindtap:'js_rank'}}"></template>
+      </view>
+      <view class="targetBox">
+          <template is="image" data="{{style:'targetNav',src:'/img/myReport.png',bindtap:'js_target'}}"></template>
+          <image wx-if="{{unRead}}" src="/img/newMsg.png" bindtap='js_target' class="newMsg"></image>
+        </view>
+      <view class="itemBox">
+        <view class="item">
+          <view class="num">
+            <text class="big">{{streakDayOneCount}}</text>
+            <text>天</text>
+          </view>
+          <view class="desc">
+            连续打卡
+          </view>
+        </view>
+        <view class="item">
+          <view class="num">
+            <text class="big">{{checkinCount}}</text>
+            <text>次</text>
+          </view>
+          <view class="desc">
+            累计打卡
+          </view>
+        </view>
+        <view class="item">
+          <view class="num">
+            <text class="big">{{sportNum}}</text>
+            <text>步</text>
+          </view>
+          <view class="desc">
+            步数
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

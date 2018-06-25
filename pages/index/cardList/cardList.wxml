@@ -1,0 +1,24 @@
+<import src="../../../tpl/image.wxml"/>
+<view class="cardList">
+    <block wx:for="{{cardList}}" wx:for-item="item" wx:key="index">
+      <view class="card-item" bindtap="{{item.status==1?'':'js_showdk_view'}}" data-type="{{item.type}}" id="cardPage-{{item.type}}">
+        <view class="card-imgbox">
+          <template is="image" data="{{style:item.type,src:'/img/'+item.type+'.png'}}"></template>
+        </view>
+        <view class="card-title">
+          <view class="card-title-val">{{item.title}}</view>
+          <view class="card-title-tmp">打卡得{{item.score}}积分</view>
+        </view>
+
+        <view class="card-dkbtn">
+          <text class="text{{item.status==1?' dis':''}}">{{item.status==1?'已完成':'快速打卡'}}</text>
+        </view>
+      </view>
+    </block>
+
+    <view class="cardListbtn" bindtap="js_cancelCardlist">
+      <text class="cardListCancel">取消</text>
+      <template is="image" data="{{style:'cardList-img',src:'/img/dkbtnbg.png'}}"></template>
+    </view>
+
+</view>

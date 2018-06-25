@@ -1,0 +1,26 @@
+<import src="../../../../../tpl/image.wxml" />
+<view class="units-box {{showLayer ? 'showLayer' : ''}}" hidden="{{!renderLayer}}" capture-catch:touchstart="cancelSelect"></view>
+<view class="units-body" style="transform: translateY({{unitsView ? 0 : vertical}}px)" hidden="{{!renderLayer}}">
+  <view class="untis-header">
+    <view class="untis-left">
+      <view class="untis-tit lineDot">{{train.name}}</view>
+      <view class="untis-val">
+        <text wx:if="{{!train.isDiy}}">消耗{{kcal||0}}千卡</text>
+        <text wx:if="{{train.isDiy}}">未知</text>
+        <text class="untis-time">({{minutes||0}}分钟)</text>
+      </view>
+    </view>
+    <view class="untis-right" catchtap="js_addTrain">
+    完成
+    </view>
+  </view>
+  <view class="untis-pickBox">
+    <view class="untis-countBox">
+        <view class="untis-input">{{minutes}}</view>
+    </view>
+    <view class="untis-pick">分钟</view>
+  </view>
+  <view>
+    <component-keyboard dotLength="1" value="{{train.change?minutes:''}}" bindvalueChange="valueChange"></component-keyboard>
+  </view>
+</view>

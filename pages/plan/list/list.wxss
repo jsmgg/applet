@@ -1,0 +1,45 @@
+/* list.wxss */
+.planList{
+  text-align: center;
+  display: block;
+  width: 100%;
+}
+.planList-item{
+  width: 338rpx;
+  height: 416rpx;
+  border-radius:20rpx;
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  margin-top:40rpx;
+}
+.planList-item-ml{
+  margin-left: 14rpx;
+}
+.planList-item-opc{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 20rpx;
+  z-index: 2;
+  background: rgba(0,0,0,0.2);
+}
+.planList-item-img{
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.planList-item-title{
+  position: absolute;
+  width: 100%;
+  box-sizing: border-box;
+  padding:0 20rpx;
+  left: 0;
+  bottom: 17rpx;
+  font-size: 32rpx;
+  color:#fff;
+  text-align: left;
+  z-index: 3;
+}

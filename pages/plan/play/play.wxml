@@ -1,0 +1,13 @@
+<!--play.wxml-->
+<import src="../../../tpl/image.wxml" />
+<include src="../../../tpl/netError/netError.wxml" wx:if="{{networkType=='none'}}"/>
+
+<view class="container playPage" wx:if="{{networkType!='none'}}">
+  <include src="start/start.wxml" wx:if="{{pageType=='start'}}"/>
+  <view class="playPage" style="display:{{pageType=='play'?'block':'none'}}">
+    <include src="play/play.wxml"/>
+  </view>
+  <include src="wait/wait.wxml" wx:if="{{pageType=='wait'}}"/>
+  <include src="traing/traing.wxml" wx:if="{{pageType=='traing'}}"/>
+  <audio  src="" id="myAudio" bindended="js_audioEnd" binderror="js_audioError"></audio>
+</view>

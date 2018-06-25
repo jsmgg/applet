@@ -1,0 +1,62 @@
+.confirmView{
+  position:fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 20;
+  background:rgba(0,0,0,0.7);
+  display: flex;
+  align-items: center;
+  justify-content:center;
+  padding:0 36rpx;
+}
+.confirmView-content{
+  width: 100%;
+  font-size: 32rpx;
+  background:#ebebeb;
+  border-radius: 20rpx;
+  text-align: center;
+}
+.confirmView-h2{
+  font-size: 40rpx;
+  padding-top: 20rpx;
+  padding-bottom: 50rpx;
+}
+.confirmView-txt{
+  font-size: 34rpx;
+  color:#7c7c7c;
+  padding: 0 60rpx;
+  line-height: 60rpx;
+}
+
+.confirmView-close{
+  position: absolute;
+  right: 0rpx;
+  top: 0rpx;
+  z-index: 10;
+  width: 100rpx;
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.confirmView-btnok,.confirmView-canel{
+  width: 496rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  color:#fff;
+  font-size: 34rpx;
+  border-radius: 10rpx;
+  text-align: center;
+  background:#ec6841;
+  margin:40rpx auto;
+}
+.confirmView-canel{
+  background:#7b7b7b;
+}
+.confirmView-close-img{
+  display: block;
+  width: 24rpx;
+  height: 25rpx;
+}

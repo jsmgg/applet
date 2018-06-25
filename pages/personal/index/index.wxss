@@ -1,0 +1,141 @@
+@font-face
+{
+font-family: Number;
+src: url('https://mall.rjfittime.com/static/eshop/scss/logic/activity/jzy/num.otf');
+}
+page{
+  width: 100%;
+  height: 100%;
+}
+.container{
+  width:100%;
+  height: 100%;
+}
+
+.contentBox{
+  width:100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.topBox{
+  position: relative;
+  width: 100%;
+  height: 425rpx;
+  display: block;
+  background:rgba(0,0,0,0.05);
+}
+.userLogo{
+  padding-top: 70rpx;
+}
+.userLogo .radiusBox{
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 100%;
+  background:#ececec;
+  overflow: hidden;
+  margin:0 auto;
+}
+.userLogo .radiusBox .img{
+  width: 180rpx;
+  height: 180rpx;
+}
+.userName{
+  margin-top: 20rpx;
+  font-size: 36rpx;
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+  padding:0 30rpx;
+  overflow: hidden;
+}
+.contact {
+  position: absolute;
+  top: 36rpx;
+  right: 25rpx;
+  width: 127rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 0;
+  margin: 0;
+  padding: 0;
+  border-radius: 30rpx;
+  background: #e7e7e7;
+}
+.contact:after {
+    border: none;
+    transform: none;
+}
+.contact .icon {
+    width: 127rpx;
+    height: 60rpx;
+    border-radius: 30rpx;
+}
+
+.userParams{
+  width: 100%;
+  padding:0 29rpx;
+  box-sizing: border-box;
+  flex: 1;
+  display: block;
+  position: relative;
+}
+.userParams .rankBox{
+  box-sizing: border-box;
+  width: 100%;
+  padding-top: 40rpx;
+  position: relative;
+}
+.rankBox .rankNav{
+  width: 689rpx;
+  height: 200rpx;
+  display: block;
+}
+.userParams .targetBox{
+  box-sizing: border-box;
+  width: 100%;
+  padding-top: 20rpx;
+  position: relative;
+}
+.targetBox .targetNav{
+  width: 689rpx;
+  height: 200rpx;
+  display: block;
+}
+
+.userParams .itemBox{
+  width:100%;
+  display: flex;
+  flex-direction: row;
+  background:#fff;
+  margin-top: 90rpx;
+}
+.userParams .itemBox .item{
+  flex: 1;
+  text-align: center;
+  position: relative;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.userParams .item .num{
+  font-size: 24rpx;
+}
+.userParams .item .num .big{
+  font-size: 60rpx;
+  padding-right: 10rpx;
+  font-family: "Number";
+}
+.userParams .item .desc{
+  color:#bdbdbd;
+  font-size:24rpx;
+  text-align: center;
+}
+.newMsg {
+  width: 120rpx;
+  height: 50rpx;
+  float:right;
+  margin:-125rpx 60rpx;
+}

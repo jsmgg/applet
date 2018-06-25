@@ -1,0 +1,31 @@
+<import src="../../../tpl/image.wxml"/>
+<view class="recordNum">
+  <view class="recordNum-canvas">
+    <view class="recordNum-canvas-wrap">
+        <canvas class="target-progress-circle" canvas-id="progress" hidden="{{!showCanvas}}">
+            <view class="target-reduce">{{reduceValue}}</view>
+            <view class="target-reduce-info">{{reduceInfo}}</view>
+            <view class="target-diff">
+                <text>{{reduceDiffTip1}}</text>
+                <text class="target-diff-value"> {{reduceDiffValue}} </text>
+                <text>{{reduceDiffTip2}}</text>
+            </view>
+        </canvas>
+    </view>
+  </view>
+  <view class="recordNum-list">
+    <view class="recordNum-item">
+      <text class="recordNum-num">{{checkinStatusForUser.streakDayOneCount||0}}</text>
+      <view class="recordNum-uint">连续打卡(天)</view>
+    </view>
+    <view class="recordNum-item">
+      <text class="recordNum-num">{{checkinStatusForUser.checkinCount||0}}</text>
+      <view class="recordNum-uint">累计打卡(次)</view>
+    </view>
+    <view class="recordNum-item">
+      <text class="recordNum-num">{{weight}}</text>
+      <view class="recordNum-uint">最新体重(kg)</view>
+    </view>
+  </view>
+
+</view>

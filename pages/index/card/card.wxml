@@ -1,0 +1,24 @@
+<import src="../../../tpl/image.wxml"/>
+<view class="card-item" bindtap="js_input_view" data-type="bodydata" id="card-bodydata">
+  <view class="card-imgbox">
+    <template is="image" data="{{style:'bodydata',src:'/img/bodydata.png'}}"></template>
+  </view>
+  <view class="card-title">
+    <text class="card-title-val">录入开营维度</text>
+  </view>
+  <view class="card-dkbtn {{aniStyle}}">
+    <text class="text" data-type="">{{addBodyFirst==1?'查看':'去填写'}}</text>
+  </view>
+</view>
+
+<view class="card-item" bindtap="js_input_view" data-type="testdata" id="card-testdata">
+  <view class="card-imgbox">
+    <template is="image" data="{{style:'bodydata',src:'/img/testdata.png'}}"></template>
+  </view>
+  <view class="card-title">
+    <text class="card-title-val">减脂能力测试</text>
+  </view>
+  <view class="card-dkbtn">
+    <text class="text" data-type="bodydata">{{isTest==1?'查看':'开始测试'}}</text>
+  </view>
+</view>

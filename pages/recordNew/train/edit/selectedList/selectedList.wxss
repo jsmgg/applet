@@ -1,0 +1,45 @@
+.selectedList{
+  padding: 0 40rpx;
+  width: 100%;
+  box-sizing: border-box;
+}
+.selectedList .item{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  height: 100rpx;
+  border-radius: 50rpx;
+  padding:0 30rpx;
+  background: #fff;
+  margin-bottom: 10rpx;
+  box-shadow: 0 0 50rpx 5rpx  rgba(0,0,0,0.05);
+}
+.selectedList .item .del{
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 20rpx;
+}
+.selectedList .item .val{
+  padding-left: 10rpx;
+  font-size: 30rpx;
+  color:rgba(0,0,0,0.85);
+  max-width: 180rpx;
+}
+.selectedList .item .time{
+  padding-left: 20rpx;
+  font-size: 30rpx;
+  color:rgba(0,0,0,0.5);
+}
+.selectedList .item .desc{
+  flex: 1;
+  text-align: right;
+  padding-right: 10rpx;
+  font-size: 30rpx;
+  color:rgba(0,0,0,0.5);
+}
+.selectedList .item .edit{
+  margin:0 10rpx;
+  width: 30rpx;
+  height: 30rpx;
+}

@@ -1,0 +1,16 @@
+<!-- 手机号所属国家选择列表模块 -->
+<template name="countryList">
+  <view class="countryList">
+    <view class="selecttips">选择国家或地区</view>
+    <view class="countryScrollList">
+      <view wx:for="{{countryList}}" wx:for-item="country" wx:key="index">
+        <view class="ctitle" bindtap="closeCountry"> {{country.initial}} </view>
+        <view class="countryBox">
+          <view class="cname lineDot" wx:for="{{country.areaCodeList}}" wx:for-item="item" bindtap="selectCountry" data-country="{{item.country}}" data-code="{{item.areaCode}}" wx:key="item.areaCode">
+            {{item.country}}
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>

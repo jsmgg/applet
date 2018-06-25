@@ -1,0 +1,28 @@
+.starDesc{
+  padding:75rpx 60rpx 107rpx 45rpx;
+  width: 100%;
+  box-sizing: border-box;
+  flex: 1;
+  overflow: auto;
+  -webkit-overflow-scrolling:touch;
+}
+.starDesc .title{
+  font-size: 36rpx;
+  font-weight: bold;
+}
+.starDesc .title2{
+  font-size: 26rpx;
+  font-weight: bold;
+  margin-top: 60rpx;
+}
+
+.starDesc .txt{
+  font-size: 26rpx;
+  line-height: 45rpx;
+}
+
+.desc{
+  color:#8c8c8c;
+  font-size: 24rpx;
+  margin-top: 50rpx;
+}

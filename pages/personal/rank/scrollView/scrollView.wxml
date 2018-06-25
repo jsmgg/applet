@@ -1,0 +1,33 @@
+<import src="../../../../tpl/image.wxml"/>
+<scroll-view scroll-y class="scrollView" style="height:{{scrollHeight}}px" bindscroll="js_scroll" scroll-with-animation="{{true}}" scroll-into-view="{{intoId}}">
+  <view class="scrollItemTmp"></view>
+  <view wx:for="{{dataList}}" wx:for-item="item" wx:key="item.userId" id="item_{{item.userId}}" class="scrollItem">
+    <block wx:if="{{item.userId!=userId}}">
+      <view class="num lineDot">
+        <template is="image" data="{{style:'img',src:'/img/rank'+(index+1)+'.png'}}" wx:if="{{index<3}}"></template>
+        <block wx:if="{{index>=3}}">{{index+1}}</block>
+      </view>
+      <view class="staticView">
+        <view class="userImg">
+          <template is="image" data="{{style:'avatar',src:item.avatar?item.avatar:'/img/defaultUser.png'}}"></template>
+        </view>
+        <view class="userName linesDot">{{item.userName||''}}</view>
+        <view class="count">{{item.score}}积分</view>
+      </view>
+    </block>
+    <block wx:if="{{item.userId==userId}}">
+      <view class="myView">
+        <view class="mynum lineDot">
+          <template is="image" data="{{style:'myimg',src:'/img/rank'+(index+1)+'.png'}}" wx:if="{{index<3}}"></template>
+          <block wx:if="{{index>=3}}">{{index+1}}</block>
+        </view>
+        <view class="userImg">
+          <template is="image" data="{{style:'avatar',src:item.avatar?item.avatar:'/img/defaultUser.png'}}"></template>
+        </view>
+        <view class="userName linesDot">{{item.userName||''}}</view>
+        <view class="count">{{item.score}}积分</view>
+      </view>
+    </block>
+  </view>
+  <view class="scrollBottom"  wx:if="{{pageType=='friend'&&myRank||pageType=='star'}}"></view>
+</scroll-view>

@@ -1,0 +1,6 @@
+<!--pages/recordNew/food/reference/reference.wxml-->
+<import src="../../../../tpl/image.wxml" />
+
+<view class="container">
+  <template wx:for="{{srcs}}" is="image" data="{{style:'img'+index, src:item}}"></template>
+</view>

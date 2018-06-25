@@ -1,0 +1,100 @@
+.changeView{
+  position:fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 20;
+  background:rgba(0,0,0,0.7);
+  display: flex;
+  align-items: center;
+  justify-content:center;
+  padding:0 70rpx;
+}
+.changeView-content{
+  width: 100%;
+  color: #fff;
+  font-size: 32rpx;
+}
+.changeView-h2{
+  font-weight: bold;
+  text-align: center;
+}
+
+.changeView-desc{
+  margin-top: 30rpx;
+  padding:0 50rpx;
+  line-height: 50rpx;
+}
+.changeView-inutTips{
+  margin-top: 30rpx;
+  padding:0 50rpx;
+}
+.changeView-inputBox{
+  margin-top: 30rpx;
+  padding:0 30rpx 30rpx 30rpx;
+  display: flex;
+  overflow: hidden;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 30rpx;
+  color:#999;
+}
+.changeView-txt{
+  background: #fff;
+  height: 100%;
+  border-radius: 8rpx 0 0 8rpx;
+  padding:0 10rpx;
+}
+.changeView-val{
+  flex: 1;
+  margin-left: 1rpx;
+  background: #fff;
+  height: 100%;
+  padding-left: 40rpx;
+  border-radius: 0 8rpx 8rpx 0;
+}
+.changeView-tips{
+  font-size: 24rpx;
+  text-align: center;
+  color:#ec6841;
+  margin-top: 40rpx;
+}
+.changeView-btn{
+  text-align: center;
+  height: 80rpx;
+  line-height: 80rpx;
+  color:#fff;
+  background:#ec6841;
+  border-radius: 16rpx;
+  margin-top: 10rpx;
+}
+.changeView-btn-n{
+  text-align: center;
+  height: 80rpx;
+  line-height: 80rpx;
+  color:#fff;
+  background:#d7d7d7;
+  border-radius: 16rpx;
+  margin-top: 10rpx;
+}
+
+.bindBackView-desc{
+  margin-top: 20rpx;
+}
+.changeView-close{
+  position: absolute;
+  right: 0rpx;
+  top: 0rpx;
+  z-index: 10;
+  width: 100rpx;
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.changeView-close-img{
+  display: block;
+  width: 24rpx;
+  height: 25rpx;
+}

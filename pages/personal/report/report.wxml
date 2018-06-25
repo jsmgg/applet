@@ -1,0 +1,17 @@
+<!--pages/personal/report/report.wxml-->
+<view class="container" wx:if="{{loadEnd}}">
+  <view class="contentBox">
+    <view class='blank'> </view>
+    <view wx:for="{{reportList}}" wx:for-item="report" wx:key="{{index}}" bindtap='js_datail' data-week='{{report.week}}' class="report-list">
+      <view class="report-box">
+        <view wx:if="{{report.isRead === 2}}" class="report-name">{{report.statusName === '开营' ? '开营报告' : report.statusName === '结营' ? '结营报告'  : '个人专属周报'}}</view>
+        <view wx:if="{{report.isRead === 1}}" class="report-name deep_color">{{report.statusName === '开营' ? '开营报告' : report.statusName === '结营' ? '结营报告'  : '个人专属周报'}}</view>
+        <text class="report-stage">{{stage}}</text>
+        <text class="report-status">{{report.statusName}}</text>
+        <image class="report-right" src='/img/right.png'></image>
+        <image wx:if='{{report.isRead === 1}}' class="report-new" src='/img/newMsg.png'></image>
+      </view>
+    </view>
+    <view wx:if="{{!reportList.length}}" class="no_report">暂时没有报告</view>
+  </view>
+</view>

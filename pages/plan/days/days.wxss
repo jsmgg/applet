@@ -1,0 +1,56 @@
+/* days.wxss */
+.tipsView{
+  padding:40rpx;
+  color:#fff;
+  font-size: 32rpx;
+  background:#40525c;
+  box-sizing: border-box;
+  width: 100%;
+}
+.planItem{
+  width:100%;
+  height: 165rpx;
+  border-bottom:1rpx solid #e5e5e5;
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  padding:0 40rpx;
+  align-items: center;
+  position:relative;
+}
+.selected{
+  border-bottom-color:#fff;
+}
+
+.planItem .leftBox{
+  flex: 1;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction:column;
+  align-items: flex-start;
+}
+.selected .leftBox{
+  color:#fff;
+}
+.planItem .leftBox .trem{
+  font-size:36rpx;
+}
+.planItem .leftBox .day{
+  font-size:20rpx;
+  color:#bdbdbd;
+}
+.planItem .img{
+  width:32rpx;
+  height: 49rpx;
+  position: relative;
+  z-index: 1;
+}
+.planItem .bg{
+  width:100%;
+  height: 100%;
+  position: absolute;
+  left:0;
+  top:0;
+  z-index: 0;
+}

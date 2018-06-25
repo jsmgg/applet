@@ -1,0 +1,401 @@
+@font-face {
+    font-family: Number;
+    src: url('https://mall.rjfittime.com/static/eshop/scss/logic/activity/jzy/num.otf');
+}
+@font-face {
+    font-family: Percent;
+    src: url('https://o4wbikkhf.qnssl.com/DINE12.ttf');
+}
+
+.curves {
+    width: 100%;
+    height: 398rpx;
+    background: white;
+    overflow: visible;
+}
+
+.target-progress-wrap {
+    width: 100%;
+    background: #272f37;
+    overflow: visible;
+}
+.header {
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 100rpx;
+    background: #272f37;
+    z-index: 1;
+}
+.header .left {
+    flex: 1;
+    align-self: center;
+    margin-left: 30rpx;
+}
+.header .right {
+    flex: 1;
+    align-self: center;
+}
+.header .right .last-target {
+    position: relative;
+    float: right;
+    height: 44rpx;
+    width: 137rpx;
+    margin-right: 30rpx;
+    border: 1rpx solid rgba(255, 255, 255, .2);
+    border-radius: 22rpx;
+    font-size: 24rpx;
+    color: white;
+    text-align: center;
+    overflow: visible;
+}
+.target-progress-wrap .contents {
+    position: relative;
+    height: 421rpx;
+    width: 100%;
+}
+.target-progress-wrap .contents .target-progress {
+    position: absolute;
+    width: 360rpx;
+    height: 360rpx;
+    left: 50%;
+    top: 13rpx;
+    transform: translateX(-50%);
+}
+.target-progress .target-progress-circle {
+    width: 100%;
+    height: 100%;
+}
+.target-progress .target-progress-circle .target-reduce {
+    width: 100%;
+    margin-top: 62rpx;
+    margin-bottom: 18rpx;
+    line-height: 120rpx;
+    font-size: 120rpx;
+    color: white;
+    text-align: center;
+    font-family: "Percent", Regular, PingFangSC, "Helvetica Neue", Helvetica, sans-serif;
+}
+.target-progress .target-progress-circle .target-reduce-info {
+    width: 100%;
+    line-height: 20rpx;
+    margin-bottom: 35rpx;
+    font-size: 20rpx;
+    color: #96989b;
+    text-align: center;
+}
+.target-progress .target-progress-circle .target-diff {
+    width: 100%;
+    line-height: 26rpx;
+    font-size: 24rpx;
+    color: white;
+    text-align: center;
+}
+.target-progress .target-progress-circle .target-diff .target-diff-value {
+    font-size: 30rpx;
+    font-family: "Percent", Regular, PingFangSC, "Helvetica Neue", Helvetica, sans-serif;
+}
+.last-target .term-list {
+    position: absolute;
+    min-width: 140rpx;
+    top: 60rpx;
+    right: -17rpx;
+    padding: 17rpx;
+    background: white;
+    border-radius: 10rpx;
+}
+.term-list .term {
+    padding: 10rpx 0;
+    border-bottom: 1px solid #f2f2f2;
+    font-size: 24rpx;
+    color: rgba(0, 0, 0, .8);
+}
+.term-list .term.selected {
+    color: #2cb190;
+}
+.term-list .term:last-child {
+    border: none;
+}
+.term-list .term .term-title {
+    line-height: 32rpx;
+    text-align: center;
+}
+.term-list .term .term-state {
+    color: #fe5b4c;
+    font-size: 18rpx;
+}
+.term-list .term.selected .term-state {
+    color: #2cb190;
+}
+.term-list .index {
+    display: inline-block;
+    position: absolute;
+    top: -2rpx;
+    left: 50%;
+    width: 10rpx;
+    height: 10rpx;
+    background: white;
+    transform: rotate(45deg) translateX(-50%);
+}
+.header .right .last-target .last-target-btn {
+    display: inline-block;
+    line-height: 45rpx;
+}
+.track {
+    display: flex;
+    position: relative;
+    height: 44rpx;
+    width: 172rpx;
+    border-radius: 23rpx;
+    border: 1rpx solid rgba(255, 255, 255, .2);
+}
+.block {
+    position: absolute;
+    top: -1rpx;
+    left: -1rpx;
+    height: 44rpx;
+    width: 87rpx;
+    background: white;
+    border-radius: 22rpx;
+    transition: left .3s;
+    border: 1rpx solid #ffffff;
+}
+.block.right {
+    left: 87rpx;
+}
+.btn-group {
+    display: flex;
+    position: absolute;
+    left: -1rpx;
+    top: -1rpx;
+    width: 172rpx;
+    height: 44rpx;
+    line-height: 44rpx;
+    background: transparent;
+    border: 1px solid transparent;
+    z-index: 1;
+}
+.btn-group .weight {
+    flex: 1;
+    height: 44rpx;
+    line-height: 44rpx;
+    color: white;
+    font-size: 24rpx;
+    text-align: center;
+}
+.btn-group .weight.weight-select {
+    color: #2cb190;
+}
+.btn-group .waistline {
+    flex: 1;
+    height: 44rpx;
+    line-height: 44rpx;
+    color: white;
+    font-size: 24rpx;
+    text-align: center;
+}
+.btn-group .waistline.waistline-select {
+    color: #2cb190;
+}
+
+.title {
+    height: 32rpx;
+    margin: 60rpx 0 40rpx;
+    font-size: 32rpx;
+    line-height: 32rpx;
+}
+
+.trend-wrap {
+    padding: 36rpx 40rpx 0 40rpx;
+}
+.trend-tab-wrap {
+    display: flex;
+    margin-bottom: 22rpx;
+}
+.trend-tab {
+    flex: 1;
+    position: relative;
+    padding: 0 0 40rpx 0;
+    text-align: center;
+    font-weight: bold;
+    font-size: 32rpx;
+    color: black;
+    line-height: 1;
+}
+.trend-tab.selected {
+    color: #2cb190;
+}
+.trend-tab.selected .trend-tab-bottom {
+    position: absolute;
+    width: 61rpx;
+    height: 6rpx;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    border-radius: 3rpx;
+    background: #2cb190;
+}
+
+.target-list-wrap {
+    overflow: visible;
+}
+.target-list {
+    overflow: visible;
+    box-sizing: border-box;
+    padding-bottom: 20rpx;
+}
+.target {
+    display: flex;
+    width: 100%;
+    height: 280rpx;
+    margin-bottom: 10rpx;
+    border-radius: 10rpx;
+    box-shadow: 0 5rpx 20rpx rgba(176, 176, 176, .25);
+}
+.target:last-child {
+    margin-bottom: 0;
+}
+.target .canvas-wrap {
+    flex: 1;
+    position: relative;
+}
+.target .canvas-wrap .progress {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 220rpx;
+    height: 220rpx;
+    transform: translate(-50%, -50%);
+}
+.progress .progress-info {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    margin-top: 8rpx;
+    transform: translateY(-50%);
+}
+.progress .progress-info .value {
+    line-height: 50rpx;
+    font-size: 64rpx;
+    font-family: "Percent", Regular, PingFangSC, "Helvetica Neue", Helvetica, sans-serif;
+    text-align: center;
+}
+.progress .progress-info .label {
+    margin-top: 10rpx;
+    line-height: 20rpx;
+    font-size: 20rpx;
+    color: #8c8c8c;
+    text-align: center;
+}
+.target .info-wrap {
+    flex: 1;
+}
+.target .info-wrap .info-title {
+    margin-top: 66rpx;
+    margin-bottom: 40rpx;
+    padding-left: 70rpx;
+    font-size: 36rpx;
+    line-height: 36rpx;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.info-title.breakfast {
+    background: url(https://shopcdn.rjfittime.com/Fo5GjttYRye5ccE3rsHboZ1jZ2Lg);
+}
+.info-title.lunch {
+    background: url(https://shopcdn.rjfittime.com/FpdS4VZI5Yh_ixYhEvq21-42HTAt);
+}
+.info-title.dinner {
+    background: url(https://shopcdn.rjfittime.com/FsnmiGabRQ35VrAkREEzusiriOHh);
+}
+.info-title.training {
+    background: url(https://shopcdn.rjfittime.com/FmV2TIl1DhPjglh01doEovT9mXpl);
+}
+.target .info-wrap .info-check {
+    margin-left: 42rpx;
+}
+.info-check .check {
+    line-height: 0;
+    margin-bottom: 20rpx;
+}
+.info-check .check image {
+    width: 20rpx;
+    height: 20rpx;
+    vertical-align: middle;
+}
+.info-check .check .check-count {
+    display: inline-block;
+    font-size: 28rpx;
+    vertical-align: middle;
+    margin-left: 10rpx;
+}
+.info-check .check .check-count .check-count-value {
+    font-size: 36rpx;
+    font-family: "Number";
+    font-weight: bold;
+}
+.info-check .check .check-count .check-count-unit {
+    font-size: 20rpx;
+}
+.info-check .uncheck {
+    line-height: 0;
+}
+.info-check .uncheck image {
+    width: 20rpx;
+    height: 20rpx;
+    vertical-align: middle;
+}
+.info-check .uncheck .check-count {
+    display: inline-block;
+    font-size: 28rpx;
+    vertical-align: middle;
+    margin-left: 10rpx;
+}
+.info-check .uncheck .check-count .check-count-value {
+    font-size: 36rpx;
+    font-family: "Number";
+    font-weight: bold;
+}
+.info-check .uncheck .check-count .check-count-unit {
+    font-size: 20rpx;
+}
+
+.logo-wrap {
+    line-height: 18rpx;
+    padding-top: 80rpx;
+    padding-bottom: 39rpx;
+    text-align: center;
+}
+.logo-wrap image {
+    width: 201rpx;
+    height: 18rpx;
+}
+
+.trend {
+    width: 100%;
+    margin-bottom: 10rpx;
+    border-radius: 17rpx;
+    padding-bottom: 17rpx;
+    box-shadow: 0 5rpx 20rpx rgba(176, 176, 176, .25);
+}
+.trend .trend-title-wrap {
+    position: relative;
+    padding: 23rpx 0 23rpx 14rpx;
+    border-bottom: 1rpx solid #e5e5e5;
+}
+.trend .trend-title-wrap .bg {
+    height: 34rpx;
+    width: 170rpx;
+}
+.trend .trend-title-wrap .trend-title {
+    position: absolute;
+    left: 43rpx;
+    top: 23rpx;
+    bottom: 0;
+    font-weight: bold;
+    font-size: 36rpx;
+    color: black;
+}
+.trend .trend-content {
+
+}

@@ -1,0 +1,177 @@
+减脂营首页：
+10001
+接口：https: //oauth.rjft.net/api/v2/wxappSignIn
+服务返回非正常json数据，一般为服务器报错
+
+10003
+接口：https: //mall.rjfittime.com/fitcamp/apply/currentApply.json
+服务返回非正常json数据，一般为服务器报错
+
+10005
+接口：https: //mall.rjfittime.com/fitcamp/apply/currentApply.json
+服务返回正常json数据，statusCode 非200和404
+
+10007:
+接口：https: //oauth.rjft.net/api/v2/wxappSignIn
+服务返回正常json数据， statusCode  非200 和404
+
+10008
+接口地址：https: //mall.rjfittime.com/weixin/transfer.json
+账号合并报错，服务返回非json
+
+
+10009：
+微信登录失败，与商城接口无关，属于微信内部接口错误
+
+10010
+接口地址：https: //mall.rjfittime.com/weixin/transfer.json
+服务处理出错，返回正常json
+
+10011
+接口地址：https: //mall.rjfittime.com/weixin/transfer.json
+账号合并报错，可能没连上服务器
+
+
+
+食谱页面：
+10000
+接口：https: //mall.rjfittime.com/fitcamp/apply/userDiet.json
+服务返回非正常json数据，一般为服务器报错
+
+
+个人中心页面
+40001
+接口：https: //mall.rjfittime.com/wxapp/fitcamp/checkinStatus.json
+服务返回res.data && res.data.object  都为空
+
+40002
+接口：https: //mall.rjfittime.com/wxapp/fitcamp/checkinStatus.json
+服务返回非正常json数据，一般为服务器报错
+
+
+训练历史列表页面
+50001，50002
+接口：https: //mall.rjfittime.com/fitcampApplet/queryTrainHistory.json
+服务返回非正常json数据，一般为服务器报错
+
+50003
+接口：https: //mall.rjfittime.com/fitcampApplet/queryTrainHistory.json
+服务返回 retcode 不是200
+
+
+训练计划首页
+40006
+接口：https: //mall.rjfittime.com/fitcampApplet/queryCurrentTrain.json
+服务返回正常json数据，retcode 非200
+
+40008
+接口：https: //mall.rjfittime.com/fitcampApplet/queryCurrentTrain.json
+服务返回数据为空，就是没有任何数据返回
+
+40001
+接口：https: //mall.rjfittime.com/fitcampApplet/queryCurrentTrain.json
+服务返回非正常json数据，一般为服务器报错
+
+
+训练计划列表页面
+70001
+接口：https: //mall.rjfittime.com/fitcampApplet/queryModuleTrainList.json
+返回正常json数据，retcode 非200
+
+70002，70003
+接口：https: //mall.rjfittime.com/fitcampApplet/queryModuleTrainList.json
+服务返回非正常json数据，一般为服务器报错
+
+
+训练计划视频播放页面
+30001
+下载时候断网了
+
+30201,30202
+微信下载视频失败【可能是视频地址不合法，包括所在域名不在合法下载域名列表】
+
+
+训练计划打卡和饮食打卡页面
+60000
+接口：https: //mall.rjfittime.com/wxapp/fitcamp/checkinStatus.json
+服务返回非正常json数据，一般为服务器报错
+
+
+饮食打卡编辑页面：
+80001
+打卡页面，发送给教练，下载服务端图片失败
+83001
+新打卡页面，发送给教练，下载服务端图片失败
+
+
+80002
+接口：https: //mall.rjfittime.com/wxapp/fitcamp/checkin.json
+打卡失败，服务端返回图片地址为空
+83002
+接口：https://mall.rjfittime.com/wxapp/fitcamp/checkIn/checkin.json
+新打卡失败，服务端返回图片地址为空
+
+80003
+接口：https: //mall.rjfittime.com/uploadImage.html
+上传图片报错了
+83003
+接口：https://wx-applet-fittime.oss-cn-beijing.aliyuncs.com
+直传阿里云OSS报错了
+
+80004
+接口：https: //mall.rjfittime.com/wxapp/fitcamp/checkin.json
+打卡失败，导致前端代码报错
+83004
+接口：https://mall.rjfittime.com/wxapp/fitcamp/checkIn/checkin.json
+新打卡失败，导致前端代码报错
+
+80005
+接口：https://malltest.rjfittime.com/fitcampApplet/scoreList.json
+获取排行榜网络出错
+
+80006
+接口：https://malltest.rjfittime.com/fitcampApplet/scoreList.json
+获取排行榜服务出错
+
+80007
+接口：
+解析用户步数失败
+
+80008
+接口：
+解析用户步数失败
+
+
+
+80010,80009
+接口：https://malltest.rjfittime.com/fitcampApplet/exchangeScore.json
+积分领取报错
+
+80011,80012
+接口：https://malltest.rjfittime.com/fitcampApplet/exchangeScore.json
+积分领取报错[首页]
+
+80013
+接口：https://oauth.rjft.net/api/v2/User
+获取用户信息失败
+
+80014，80015
+接口：https://mall.rjfittime.com/fitcampApplet/targetDetail.json
+目标管理接口报错：14请求失败，15请求成功，但数据为空
+
+
+82000
+接口：https://malltest.rjfittime.com/fitcampApplet/checkIn/queryTrain.json
+获取运动列表请求失败
+
+83000
+接口：https://malltest.rjfittime.com/fitcampApplet/checkIn/queryRecipe.json
+搜索食物列表失败
+
+84001
+接口：https://malltest.rjfittime.com/wxapp/fitcamp/weekList.json
+获取周报列表失败
+
+84002
+接口：https://malltest.rjfittime.com/wxapp/fitcamp/weekList.json
+服务返回非正常json数据，一般为服务器报错

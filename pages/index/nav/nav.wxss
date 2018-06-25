@@ -1,0 +1,74 @@
+.navs{
+  margin:0 40rpx;
+  font-size: 0;
+}
+
+.navs-list{
+  width: 100%;
+  display: flex;
+  position: relative;
+  z-index: 20;
+}
+.navs .item{
+  flex: 1;
+  height: 188rpx;
+  background: #fff;
+  border-radius: 20rpx;
+  margin-top: 18rpx;
+  position: relative;
+  z-index: 0;
+}
+.navs .ml18{
+  margin-left: 18rpx;
+}
+.navs .ml0{
+  z-index: 5;
+}
+
+.navs .tit{
+  position: absolute;
+  left: 30rpx;
+  bottom: 30rpx;
+  font-size: 30rpx;
+  font-weight: bold;
+}
+
+.navs .navCards{
+  position: absolute;
+  right: 30rpx;
+  top: 30rpx;
+  width: 87rpx;
+  height: 90rpx;
+}
+.navs .navCardsTips{
+  position: absolute;
+  left: -30rpx;
+  top: -100rpx;
+  width: 494rpx;
+  height: 166rpx;
+}
+
+.navs .navTarget{
+  position: absolute;
+  right: 30rpx;
+  top: 30rpx;
+  width: 132rpx;
+  height: 131rpx;
+}
+
+.navs .navSport{
+  position: absolute;
+  right: 30rpx;
+  top: 30rpx;
+  width: 130rpx;
+  height: 84rpx;
+}
+
+.navs .navDiet{
+  position: absolute;
+  right: 30rpx;
+  top: 30rpx;
+  width: 85rpx;
+  height: 96rpx;
+}
+

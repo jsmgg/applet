@@ -1,0 +1,126 @@
+/* pages/recordNew/sport/edit/edit.wxss */
+@import "list/list.wxss";
+@import "units/units.wxss";
+@import "selectedList/selectedList.wxss";
+.sportPage{
+  display: block;
+  width: 100%;
+  padding-top:80rpx;
+  color: rgba(0, 0, 0, .85);
+}
+
+
+
+
+
+
+
+
+
+
+.imgBox{
+  width: 190rpx;
+  height: 190rpx;
+  border-radius: 8rpx;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 37rpx;
+}
+.imgBox .btnbox{
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background-color:rgba(0,0,0,0.05);
+}
+.imgBox .btnbox .addBtn{
+  display: block;
+  width: 36rpx;
+  height: 36rpx;
+}
+.imgBox .img{
+  position: absolute;
+  display: block;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+.titleView{
+  box-sizing: border-box;
+  padding:0 37rpx 37rpx 37rpx;
+  height: 160rpx;
+  display: flex;
+  align-items: flex-end;
+}
+.titleView .val{
+  flex: 1;
+  height: 50rpx;
+  font-size: 42rpx;
+  font-weight: bold;
+}
+.titleView .btn{
+  width: 130rpx;
+  height: 80rpx;
+  padding-top: 45rpx;
+  box-sizing: border-box;
+  font-size: 30rpx;
+  color:rgba(0,0,0,0.2);
+  text-align: center;
+  vertical-align: bottom;
+}
+.titleView .bg{
+  color: #2cb190;
+}
+
+.search-btn-wrapper {
+    height: 100rpx;
+    padding: 0 37rpx;
+    position: relative;
+    margin-top: 50rpx;
+}
+.search-btn-wrapper .search-btn {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    line-height: 100rpx;
+    background-color:#f5f5f5;
+    border-radius: 50rpx;
+    padding: 0 40rpx 0 40rpx;
+    text-align: center;
+    font-size: 30rpx;
+    font-weight: bold;
+}
+
+.nextBox {
+  width: 100%;
+  height: 150rpx;
+}
+.nextBox .nextBg {
+  height: 128rpx;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding-top: 45rpx;
+  background: bottom center repeat-x;
+  background-size: contain;
+  z-index: 3;
+}
+.nextBox .next {
+  display: block;
+  width: 434rpx;
+  height: 128rpx;
+  bottom: 24rpx;
+  margin: 0 auto;
+}

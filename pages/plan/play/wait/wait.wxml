@@ -1,0 +1,19 @@
+<view class="playWait">
+  <image src="{{cdnHost}}FkNTcqGUHtJanUvZUgCv5ckBvLQO" class="playWait-bg"></image>
+  <view class="playWait-opc"></view>
+  <view class="playWait-box">
+    <view class="playWait-title">休息一下</view>
+    <view class="playWait-loading">
+      <canvas class="playWait-radius" canvas-id="js_loadingimg"/>
+      <view class="playWait-pro">
+        <text class="playWait-num">{{intermission}}</text>
+        <text class="playWait-util">s</text>
+      </view>
+    </view>
+    <view class="playWait-tipsBox">
+      <view class="playWait-tips1">下一个动作</view>
+      <view class="playWait-tips2 lineDot">{{nextMotionName}}</view>
+      <view class="playWait-btn" bindtap="js_next" id="waitView-btn">跳过休息</view>
+    </view>
+  </view>
+</view>

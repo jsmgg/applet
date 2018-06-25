@@ -1,0 +1,156 @@
+<import src="../../../../tpl/image.wxml" />
+
+<view class="container">
+    <!--打卡图片-->
+    <view class="image-wrapper">
+        <template is="image" data="{{src: imgPath, style: 'img', mode: 'aspectFill'}}"></template>
+        <view class="img-layer" bindtap="changeRecordImage">
+            <template wx:if="{{!imgPath}}" is="image" data="{{src: '/img/add-default.png', style: 'add-default'}}"></template>
+            <template wx:else="{{imgPath}}" is="image" data="{{src: '/img/add-selected.png', style: 'add-default'}}"></template>
+        </view>
+    </view>
+    <!--餐食来源-->
+    <view class="source-wrapper">
+        <text class="source-title">餐食来源</text>
+        <view class="source-list">
+            <view class="source-item self {{home}}" data-from="home" catchtap="switchFrom">自己做</view>
+            <view class="source-item {{out}}" data-from="out" catchtap="switchFrom">外食</view>
+        </view>
+    </view>
+    <!--餐食内容-->
+    <view class="content-wrapper">
+        <view class="content-header">
+            <view class="content-title">餐食内容</view>
+            <view class="content-edit {{contentList.length > 0 ? 'editable' : ''}} {{editing}}" catchtap="switchEditState">{{(isEditing && contentList.length > 0) ? '完成' : '编辑'}}</view>
+        </view>
+        <view class="content-list">
+            <view
+                class="content-item"
+                wx:for="{{contentList}}"
+                wx:for-index="idx"
+                data-index="idx"
+                data-recipe="{{item}}"
+                catchtap="editItem">
+                <view class="left">
+                    <view class="del-wrapper" wx:if="{{isEditing}}" catchtap="delItem" data-index="{{idx}}">
+                        <template is="image" data="{{src: '/img/del.png', style: 'del'}}"></template>
+                    </view>
+                    <view class="name">{{item.name}}</view>
+                    <view class="mass">{{item.mass}}</view>
+                </view>
+                <view class="right">
+                    <view class="calorie">{{item.calorieText}}</view>
+                    <view class="arrow-wrapper" wx:if="{{!isEditing}}">
+                        <template is="image" data="{{src: '/img/arrow-right.png', style: 'arrow'}}"></template>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="search-btn-wrapper" catchtap="focus">
+            <view class="search-btn">添 加</view>
+        </view>
+    </view>
+    <!--继续按钮-->
+    <view class="btn-wrapper" style="{{cdnHost?'background-image: url('+cdnHost+'generate-btn-bg.png)':''}}">
+        <template is="image" data="{{src: '/img/next.png', style: 'btn', bindtap: 'next'}}"></template>
+    </view>
+</view>
+
+<view class="search-layer" style="transform: translateY({{isSearching ? 0 : searchVertical}}px)" hidden="{{!renderSearch}}">
+    <view class="content-search {{isSearching ? '' : 'space'}}">
+        <input
+            class="search"
+            placeholder-class="search-placeholder"
+            placeholder="请输入食材" 
+            maxlength="100" 
+            bindinput="confirm" 
+            confirm-type="done"
+            value="{{clearValue}}"
+            focus="{{focusFlag}}" />
+        <view class="cancel" hidden="{{!isSearching}}" catchtap="cancelSearch">取消</view>
+    </view>
+    <!--搜索结果-->
+    <scroll-view scroll-y class="result-list" style="height:{{scrollHeight}}px" scroll-top="{{scrollTop}}" bindscrolltolower="js_loadMore">
+        <view class="result-item color-green" hidden="{{!(showTag === 1 && isSearching)}}" catchtap="customRecipe">
+            <view class="name">添加“{{keyword}}”为自定义食材</view>
+        </view>
+        <view wx:for="{{searchResult}}" class="result-item" catchtap="searchItem" data-recipe="{{item}}">
+            <view class="name">{{item.name}}</view>
+            <view class="calorie">{{item.gramUnit}}</view>
+        </view>
+    </scroll-view>
+</view>
+
+<!--编辑食物重量-->
+<view class="edit-layer {{showLayer ? 'showLayer' : ''}}" hidden="{{!renderLayer}}" catchtap="cancelSelect"></view>
+<view class="edit-wrapper" style="transform: translateY({{showEditor ? 0 : vertical}}px)" hidden="{{!renderLayer}}">
+    <!--参考衡量-->
+    <view class="edit-reference">
+        <view class="btn" catchtap="reference">参考衡量</view>
+    </view>
+    <!--编辑框头部-->
+    <view class="edit-header">
+        <view class="level1">
+            <view class="left">
+                <view class="tit">{{recipe.name}}</view>
+                <view class="val">
+                    {{recipe.current.calorie >= 0 ? recipe.current.calorie + '千卡' : '未知'}}
+                    <text class="unit" wx:if="{{recipe.isGram}}">({{recipe.count||0}}克)</text>
+                    <text class="unit" wx:else>({{recipe.count||0}}{{recipe.unit.unit}}={{recipe.current.weight||0}}克)</text>
+                </view>
+            </view>
+            <view class="right" catchtap="selected">
+              完成
+            </view>
+        </view>
+    </view>
+    <!--编辑框内容-->
+    <view class="edit-content">
+        <view class="countBox">
+            <view class="input">{{recipe.count}}</view>
+        </view>
+        <picker-view class="measure" indicator-class="indicator" mask-class="mask" bindchange="picking" value="{{recipe.value}}">
+            <picker-view-column>
+                <view class="measure-item" wx:for="{{recipe.units}}">{{item.unit}}</view>
+            </picker-view-column>
+        </picker-view>
+    </view>
+    <!--编辑框底部-->
+    <view class="edit-footer">
+        <component-keyboard dotLength="1" value="{{recipe.unit.change?recipe.count:''}}" bindvalueChange="valueChange"></component-keyboard>
+    </view>
+</view>
+
+
+
+<!--
+<view class="edit-layer {{showLayer ? 'showLayer' : ''}}" hidden="{{!renderLayer}}" catchtap="cancelSelect"></view>
+<view class="edit-wrapper" style="transform: translateY({{showEditor ? 0 : vertical}}px)" hidden="{{!renderLayer}}">
+    <view class="edit-reference">
+        <view class="btn" catchtap="reference">参考衡量</view>
+    </view>
+    <view class="edit-header">
+        <view class="level1">
+            <view class="left">{{recipe.name}}</view>
+            <view class="right">{{recipe.current.calorie >= 0 ? recipe.current.calorie + '千卡' : '未知'}}</view>
+        </view>
+        <view class="level2" wx:if="{{recipe.isGram}}">({{recipe.current.weight}}克)</view>
+        <view class="level3" wx:else>({{recipe.count}}{{recipe.unit.unit}}≈{{recipe.current.weight}}克)</view>
+    </view>
+    <view class="edit-content">
+        <picker-view class="measure" indicator-class="indicator" mask-class="mask" bindchange="picking" value="{{recipe.value}}">
+            <picker-view-column class="measure-part">
+                <view class="measure-item" wx:for="{{recipe.units}}">{{item.unit}}</view>
+            </picker-view-column>
+            <picker-view-column class="measure-part">
+                <view class="measure-item" wx:for="{{recipe.masses}}">{{item}}</view>
+            </picker-view-column>
+        </picker-view>
+    </view>
+    <view class="edit-footer">
+        <view catchtap="selected">
+            <template is="image" data="{{src: '/img/next.png', style: 'btn'}}"></template>
+        </view>
+    </view>
+</view>
+-->
